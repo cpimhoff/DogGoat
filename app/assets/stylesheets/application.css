@@ -14,19 +14,36 @@
  *= require_self
  */
 
-html {
+body {
   font-family: sans-serif;
-  background-color: #c1c1c1;
-  margin: 0px, auto;
-  padding: 0px, auto;
+  background-color: #f4f4f4;
+  margin: 0px;
+  padding: 0px;
 }
 
 #site_header {
-  background-color: black;
   color: white;
-  font-size: 6em;
 }
 
-#site_header #goat {
-  color: lightgray;
+#site_header #hero {
+  background-color: black;
+  font-size: 6em;
+  padding: 0.2em;
+}
+#site_header #hero #goat {
+  color: #d0d0d0;
+}
+
+#site_header #navigation_bar {
+  background-color: #494949;
+  padding: 10px;
+}
+
+#site_header #navigation_bar .left {
+  text-align: left;
+}
+
+#site_header #navigation_bar .right {
+  float: right;
+  text-align: right;
 }
