@@ -1,7 +1,7 @@
 
 // a globally avaliable scss file for creating CSS helper functions
 
-@mixin nav_bar_styles($height) {
+@mixin nav_bar_structure($height) {
   height: $height;
   padding: $height*0.5;
   padding-top: $height*0.2;

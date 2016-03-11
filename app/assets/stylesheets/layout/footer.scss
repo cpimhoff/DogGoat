@@ -1,23 +1,24 @@
 //SITE FOOTER
 #site_footer {
   background-color: #cccaca;
-  @include nav_bar_styles(1em);
-}
-
-#site_footer .lateral_list span {
   color: #b1b1b1;
-  text-transform: lowercase;
-  @include transition_color(0.2s);
-}
+  @include nav_bar_structure(1em);
 
-#site_footer .lateral_list span:hover {
-  color: #dedede;
-}
+  .lateral_list span {
+    text-transform: lowercase;
+    @include transition_color(0.2s);
+  }
 
-#site_footer .left {
-  float: left;
-}
+  .lateral_list span:hover {
+    color: #dedede;
+  }
 
-#site_footer .right {
-  float: right;
+  .left {
+    float: left;
+  }
+
+  .right {
+    float: right;
+  }
+
 }

@@ -1,49 +1,38 @@
 
-//SITE HERO
 #site_header {
   color: white;
-}
-#site_header #hero {
-  background-color: black;
-  font-size: 6em;
-  padding: 0.2em;
-}
-#site_header #hero * {
-  @include transition_color(0.5s);
-}
-#site_header #hero #goat {
-  color: #d0d0d0;
-}
-#site_header #hero #dog {
-  color: white;
-}
-#site_header #hero:hover #goat {
-  color: white;
-}
-#site_header #hero:hover #dog {
-  color: #d0d0d0;
-}
 
-//NAVIGATION BAR
-#site_header #navigation_bar {
-  background-color: #494949;
-  @include nav_bar_styles(1em);
-}
+  #hero {
+    background-color: black;
+    font-size: 6em;
+    padding: 0em;
+    padding-left: 20px;
 
-#site_header #navigation_bar .lateral_list span {
-  color: gray;
-  text-transform: lowercase;
-  @include transition_color(0.2s);
-}
+    span {
+      @include transition_color(0.5s);
+      color: #d0d0d0;
+    }
+    span:hover {
+      color: white;
+    }
+  }
 
-#site_header #navigation_bar .lateral_list span:hover {
-  color: white;
-}
+  #navigation_bar {
+    background-color: #494949;
+    color: gray;
+    @include nav_bar_structure(1em);
 
-#site_header #navigation_bar .left {
-  float: left;
-}
+    .lateral_list span {
+      text-transform: lowercase;
+      @include transition_color(0.2s);
+    }
+    .lateral_list span:hover {
+      color: white;
+    }
 
-#site_header #navigation_bar .right {
-  float: right;
+    .left {float: left;}
+    .right {float: right;}
+
+  }
+
 }
