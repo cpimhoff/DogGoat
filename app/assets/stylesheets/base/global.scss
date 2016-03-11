@@ -2,8 +2,12 @@
 // global CSS styles for the entire webpage
 
 body {
-  font-family: sans-serif;
+  font-family: 'Helvetica Neue', Helvetica, sans-serif;
   background-color: #e4e4e4;
   margin: 0px;
   padding: 0px;
+}
+
+.main_content {
+  min-height: 80vh;
 }

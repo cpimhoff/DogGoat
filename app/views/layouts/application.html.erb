@@ -10,19 +10,33 @@
 
 <div id="site_header">
   <div id="hero">
-    <%= link_to root_path do |x| %>
+    <%= link_to posts_path do |x| %>
       <span id="dog">DOG</span><span id="goat">GOAT</span>
     <% end %>
   </div>
   <div id="navigation_bar">
-    <span class='left'>hot new featured</span>
-    <span class='right'>about logout</span>
+    <div class='left lateral_list'>
+      <span>hot</span>
+      <span>new</span>
+      <span>featured</span>
+    </div>
+    <div class='right lateral_list'>
+      <span>upload</span>
+      <span>logout</span>
+    </div>
   </div>
 </div>
 
-<%= yield %>
+<div class="main_content">
+  <%= yield %>
+</div>
 
 <div id="site_footer">
+  <div class='right lateral_list'>
+    <span>contact</span>
+    <span>policy</span>
+    <span>about</span>
+  </div>
 </div>
 
 </body>

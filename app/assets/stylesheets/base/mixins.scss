@@ -1,2 +1,14 @@
 
 // a globally avaliable scss file for creating CSS helper functions
+
+@mixin nav_bar_styles($height) {
+  height: $height;
+  padding: $height*0.5;
+  padding-top: $height*0.2;
+  font-size: 150%;
+}
+
+@mixin transition_color($duration) {
+  -webkit-transition: color $duration;
+  transition: color $duration;
+}
