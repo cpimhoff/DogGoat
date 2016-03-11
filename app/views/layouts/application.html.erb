@@ -10,7 +10,9 @@
 
 <div id="site_header">
   <div id="hero">
-    <span id="dog">Dog</span><span id="goat">Goat</span>
+    <%= link_to root_path do |x| %>
+      <span id="dog">DOG</span><span id="goat">GOAT</span>
+    <% end %>
   </div>
   <div id="navigation_bar">
     <span class='left'>hot new featured</span>
@@ -19,6 +21,9 @@
 </div>
 
 <%= yield %>
+
+<div id="site_footer">
+</div>
 
 </body>
 </html>
