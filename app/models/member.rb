@@ -7,4 +7,8 @@ class Member < ActiveRecord::Base
   #adds confirmation validation on password
   has_secure_password
 
+  def full_name
+    return self.first_name + ' ' + self.last_name
+  end
+
 end

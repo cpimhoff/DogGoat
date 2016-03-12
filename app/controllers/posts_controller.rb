@@ -4,6 +4,7 @@ class PostsController < ApplicationController
 
   # Read
   def index
+    @posts = Post.all.hot
   end
 
   def show
@@ -33,7 +34,7 @@ class PostsController < ApplicationController
   private
 
     def get_post_from_id
-      @post = Post.find(params[:id])
+      Post.find(params[:id])
     end
 
 end

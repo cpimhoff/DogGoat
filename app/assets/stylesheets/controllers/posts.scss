@@ -1,3 +1,24 @@
 // Place all the styles related to the Posts controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.posts_list {
+
+  .post {
+    margin-bottom: 1em;
+    padding: 1em;
+    background-color: #e3e3e3;
+
+    .author,.views {
+      font-style: italic;
+      color: #919191;
+    }
+
+    .title {
+      font-size: 300%;
+      color: #373737;
+    }
+
+  }
+
+}
