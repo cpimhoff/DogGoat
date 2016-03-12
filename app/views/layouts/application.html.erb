@@ -16,9 +16,9 @@
   </div>
   <div id="navigation_bar">
     <div class='left lateral_list'>
-      <span>hot</span>
-      <span>new</span>
-      <span>featured</span>
+      <%= link_to "hot", posts_path%>
+      <%= link_to "new", posts_path%>
+      <%= link_to "featured", posts_path%>
     </div>
     <div class='right lateral_list'>
       <span>upload</span>
@@ -32,8 +32,8 @@
 </div>
 
 <div id="site_footer">
-  <div class="left">
-    <span>pre-alpha</span>
+  <div class="left lateral_list">
+    <a href="https://github.com/cpimhoff/DogGoat">pre-alpha</a>
   </div>
   <div class='right lateral_list'>
     <span>contact</span>

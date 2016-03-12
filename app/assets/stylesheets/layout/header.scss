@@ -22,11 +22,12 @@
     color: gray;
     @include nav_bar_structure(1em);
 
-    .lateral_list span {
+    .lateral_list a {
+      display: inline;
       text-transform: lowercase;
       @include transition_color(0.2s);
     }
-    .lateral_list span:hover {
+    .lateral_list a:hover {
       color: white;
     }
 
