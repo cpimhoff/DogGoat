@@ -12,3 +12,33 @@
   -webkit-transition: color $duration;
   transition: color $duration;
 }
+
+@mixin triangle_sloped_up($size, $color) {
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: $size $size 0 0;
+  border-color: $color transparent transparent transparent;
+}
+
+@mixin parallelogram_flag_tip($height, $color) {
+  @include parallelogram($height, 1em, $color);
+  z-index: -100;
+}
+
+@mixin parallelogram_flag_fill($height, $color) {
+  @include parallelogram($height, 2em, $color);
+  position: relative;
+  left: -$height/2;
+  display: inline;
+  z-index: -100;
+}
+
+@mixin parallelogram($height, $width, $color)  {
+  width: $width;
+	height: $height;
+	-webkit-transform: skew(-20deg);
+	   -moz-transform: skew(-20deg);
+	     -o-transform: skew(-20deg);
+	background: $color;
+}

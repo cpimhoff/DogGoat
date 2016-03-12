@@ -5,20 +5,44 @@
 .posts_list {
 
   .post {
-    margin-bottom: 1em;
-    padding: 1em;
-    background-color: #e3e3e3;
+    $backing: #e3e3e3;
 
-    .author,.views {
-      font-style: italic;
-      color: #919191;
+    margin-bottom: 1.2em;
+    display:flex;
+
+      .post_details {
+      padding: 1em;
+      background-color: $backing;
+      border-left: medium solid black;
+
+      .author,.views {
+        font-style: italic;
+        color: #919191;
+        text-transform: lowercase;
+
+        position: relative;
+        top: 3px;
+      }
+
+      .author:hover {
+        text-decoration: underline;
+      }
+
+      .title {
+        font-size: 300%;
+        color: #373737;
+        text-transform: capitalize;
+      }
+
     }
 
-    .title {
-      font-size: 300%;
-      color: #373737;
+    $post_edge_height: 6em;
+    .post_edge_tip {
+      @include parallelogram_flag_tip($post_edge_height, $backing);
     }
-
+    .post_edge_fill {
+      @include parallelogram_flag_fill($post_edge_height, $backing);
+    }
   }
 
 }
