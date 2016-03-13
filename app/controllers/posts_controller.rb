@@ -4,7 +4,7 @@ class PostsController < ApplicationController
 
   # Read
   def index
-    @posts = Post.all.hot
+    @posts = Post.hot
   end
 
   def show

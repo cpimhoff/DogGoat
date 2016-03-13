@@ -9,9 +9,10 @@ class Post < ActiveRecord::Base
   validates_length_of :raw_content, minimum: 300, message: "Your post isn't very long. We'd appreciate it if you could expand on it."
   validates_numericality_of :view_count
 
-  scope :recent, -> {order('created_at DESC')}
-  scope :hot, -> {order('view_count DESC')}
-  scope :cold, -> {order('view_count ASC')}
+  scope :recent, -> {order('created_at DESC').visible}
+  scope :hot, -> {order('view_count DESC').visible}
+  scope :cold, -> {order('view_count ASC').visible}
+  scope :visible, -> {where('hidden'=> false)}
 
   def content
     renderer = Redcarpet::Render::HTML.new(escape_html: true)
