@@ -14,6 +14,8 @@ gem 'coffee-rails', '~> 4.1.0'
 
 # Simple, RESTful compatible form semantic sugar
 gem 'formtastic', '~> 3.0'
+# Markdown parser and render
+gem 'redcarpet', '~> 3.3'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'

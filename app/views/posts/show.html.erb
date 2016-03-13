@@ -1,0 +1,14 @@
+
+<div class="post_content">
+  <div class="heading" style="border-left-color: <%=@post.color%>">
+    <div class="title">
+      <%= @post.title %>
+    </div>
+    <div class="author">
+      <%= @post.author.full_name %>
+    </div>
+  </div>
+  <div class="content markdown">
+    <%= raw(@post.content) %>
+  </div>
+</div>

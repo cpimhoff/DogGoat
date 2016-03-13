@@ -8,6 +8,8 @@ class PostsController < ApplicationController
   end
 
   def show
+    @post.view_count += 1
+    @post.save
   end
 
   # Create
@@ -34,7 +36,7 @@ class PostsController < ApplicationController
   private
 
     def get_post_from_id
-      Post.find(params[:id])
+      @post = Post.find(params[:id])
     end
 
 end
