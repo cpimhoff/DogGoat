@@ -1,0 +1,9 @@
+<h1>Delete Post</h1>
+
+<p>
+  Are you sure you would like to delete <%= @post.title %>? This action can not be undone.
+</p>
+
+<%= form_for @post, method: :delete do |f| %>
+  <%= f.submit "Delete." %>
+<% end %>

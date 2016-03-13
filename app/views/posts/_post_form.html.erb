@@ -1,0 +1,13 @@
+<div class="form">
+  <%= semantic_form_for @post do |f| %>
+    <%= f.inputs :name => "Details", :id => "meta" do %>
+      <%= f.input :title %>
+      <%= f.input :author %>
+      <%= f.input :color, :as=>:select, :collection=>["black","white","red","orange","yellow","pink","blue","purple","green"] %>
+    <% end %>
+    <%= f.inputs :name => "Content", :id => "content" do %>
+      <%= f.input :raw_content, :label=>"", :hint => "Feel free to use **Markdown** to style your content." %>
+    <% end %>
+    <%= f.actions %>
+  <% end %>
+</div>

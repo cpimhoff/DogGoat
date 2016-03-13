@@ -14,9 +14,16 @@ class PostsController < ApplicationController
 
   # Create
   def new
+    @post = Post.new
   end
 
   def create
+    @post = Post.new(post_params)
+    if @post.save
+      redirect_to posts_path
+    else
+      render 'new'
+    end
   end
 
   # Update
@@ -24,6 +31,12 @@ class PostsController < ApplicationController
   end
 
   def update
+    @post.update(post_params)
+    if @post.save
+      redirect_to post_path @post
+    else
+      render 'edit'
+    end
   end
 
   # Delete
@@ -31,9 +44,15 @@ class PostsController < ApplicationController
   end
 
   def destroy
+    @post.destroy
+    redirect_to posts_path
   end
 
   private
+
+    def post_params
+      params.require('post').permit('title','color','author_id','raw_content')
+    end
 
     def get_post_from_id
       @post = Post.find(params[:id])
