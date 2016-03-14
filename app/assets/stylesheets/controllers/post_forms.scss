@@ -1,0 +1,68 @@
+
+.form {
+  width: 60vw;
+  margin-left: 2em;
+
+  input#post_title {
+    font-size: 300%;
+    text-transform: capitalize;
+
+    background: transparent;
+    color: #787878;
+    border: 0;
+    border-bottom: 2px solid #787878;
+    margin-bottom: 0.1em;
+
+    @include transition_color(0.2s);
+
+    &:hover {
+      color:  #5b5b5b;
+      border-bottom: 2px solid #5b5b5b;
+    }
+
+    &:focus {
+      color: black;
+      border-bottom: 2px solid black;
+    }
+
+  }
+
+  .author_tag {
+    position: relative;
+    top: -0.2em;
+    left: 0.2em;
+    font-size: 110%;
+    font-weight: bold;
+    font-style: italic;
+    text-transform: lowercase;
+    color: #c1c1c1;
+
+    margin-bottom: 0.3em;
+  }
+
+  textarea#post_raw_content {
+    min-width: 40em;
+    max-width: 90vw;
+    min-height: 40vh;
+    height: 60vh;
+
+    background-color: rgb(241,236,236);
+    border: none;
+
+    padding: 1em;
+    margin-bottom: 0.2em;
+
+    font-size: 90%;
+    line-height: 150%;
+  }
+
+  textarea#post_raw_content::selection {
+    background-color: rgb(219,219,219);
+  }
+
+  .button {
+    @include button;
+    text-transform: uppercase;
+  }
+
+}
