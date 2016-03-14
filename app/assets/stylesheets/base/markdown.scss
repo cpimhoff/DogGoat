@@ -69,6 +69,15 @@
     font-weight: bold;
   }
 
+// CODE BLOCKS (here, fancy blocks)
+// note that since it's a preprocessed block, you can't use other MD here.
+  pre {
+    margin: 2em;
+    code {
+      font-family: serif;
+    }
+  }
+
 // LISTS
 
   ul,ol {
