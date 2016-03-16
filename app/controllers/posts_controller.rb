@@ -16,7 +16,8 @@ class PostsController < ApplicationController
   def new
     if enforce_membership
       @post = Post.new
-      @post.author = Member.find(session[:member_id])
+      @post.title = "Untitled Post"
+      @post.author = Member.current
     end
   end
 
@@ -81,7 +82,7 @@ class PostsController < ApplicationController
 
     def enforce_post_ownership
       unless @post.author_id == session[:member_id]
-        flash['msg'] = "Only the owner of this Post can modify it."
+        flash['msg'] = "Only the owner of a Post can modify it."
         redirect_to posts_path
         return false
       else
