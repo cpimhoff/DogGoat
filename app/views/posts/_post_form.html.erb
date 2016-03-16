@@ -1,10 +1,10 @@
 <div class="form">
-  <%= form_for @post do |f| %>
-    <%= f.text_field :title %>
+  <%= semantic_form_for @post do |f| %>
+    <%= f.input :title %>
     <div class="author_tag">
       <%= @post.author.full_name %>
     </div>
-    <%= f.text_area :raw_content %>
-    <%= f.submit "Update", class: "button update_button" %>
+    <%= f.input :raw_content %>
+    <%= f.action :submit, :as => :button %>
   <% end %>
 </div>
