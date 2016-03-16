@@ -44,6 +44,7 @@ class PostsController < ApplicationController
     if enforce_post_ownership
       @post.update(post_params)
       if @post.save
+        flash['msg'] = "Your edits were saved."
         redirect_to post_path @post
       else
         render 'edit'
@@ -58,6 +59,7 @@ class PostsController < ApplicationController
 
   def destroy
     if enforce_post_ownership
+      flash['msg'] = "Goodbye forever #{@post.title}! We hated you anyway."
       @post.destroy
       redirect_to posts_path
     end
