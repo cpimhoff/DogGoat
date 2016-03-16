@@ -1,1 +1,6 @@
 <%= render 'post_form' %>
+<%= link_to delete_post_path(@post) do %>
+  <div class="button to_delete_button">
+    delete
+  </div>
+<% end %>
