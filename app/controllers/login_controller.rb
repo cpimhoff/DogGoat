@@ -6,9 +6,14 @@ class LoginController < ApplicationController
 
   #post login/
   def login
+    unless session[:member_id].blank?
+      # guard statement for users already logged in
+      flash['msg'] = "Hey #{session[:member_first_name]}, you're already logged in."
+      redirect_to posts_path
+    end
+
     @member = Member.where(email:login_params['email']).first
     if @member != nil
-      Rails.logger.debug("password attempt: #{login_params['password']}")
       if @member.authenticate(login_params['password'])
 
         session[:member_id] = @member.id
