@@ -4,26 +4,8 @@
   margin-left: 2em;
 
   input#post_title {
+    @include underlined_input;
     font-size: 300%;
-    text-transform: capitalize;
-
-    background: transparent;
-    color: #787878;
-    border: 0;
-    border-bottom: 2px solid #787878;
-
-    @include transition_color(0.2s);
-
-    &:hover {
-      color:  #5b5b5b;
-      border-bottom: 2px solid #5b5b5b;
-    }
-
-    &:focus {
-      color: black;
-      border-bottom: 2px solid black;
-    }
-
   }
 
   .author_tag {
@@ -51,15 +33,14 @@
 
     font-size: 90%;
     line-height: 150%;
-  }
 
-  textarea#post_raw_content::selection {
-    background-color: rgb(219,219,219);
+    &::selection {
+      background-color: rgb(219,219,219);
+    }
   }
 
   .button {
     @include button;
-    text-transform: uppercase;
   }
 
 }

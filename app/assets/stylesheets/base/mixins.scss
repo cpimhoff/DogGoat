@@ -17,6 +17,7 @@
   padding: 0.5em 1em 0.5em 3em;
   font-size: 120%;
   text-align: right;
+  text-transform: uppercase;
   border: none;
   background-color: $color;
   cursor: pointer;
@@ -25,6 +26,25 @@
 
   &:hover {
     background-color: darken($color, 10);
+  }
+}
+
+@mixin underlined_input {
+  font-size: 100%;
+  background: transparent;
+  color: #787878;
+  border: 0;
+  border-bottom: 2px solid #787878;
+  margin-bottom: 0.1em;
+  
+  @include transition_color(0.2s);
+  &:hover {
+    color:  #5b5b5b;
+    border-bottom: 2px solid #5b5b5b;
+  }
+  &:focus {
+    color: black;
+    border-bottom: 2px solid black;
   }
 }
 

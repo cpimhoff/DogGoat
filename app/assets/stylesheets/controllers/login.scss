@@ -6,45 +6,31 @@
   margin-left: 2em;
   width: 25em;
 
-  .email,.password {
+  .email_field,.password_field {
     margin-bottom: 1em;
 
+    span {
+      position: relative;
+      top: 1em;
+      width: 15%;
+    }
+
     input {
-      font-size: 100%;
-      background: transparent;
-      color: #787878;
-      border: 0;
-      border-bottom: 2px solid #787878;
-      margin-bottom: 0.1em;
+      @include underlined_input;
       float: right;
 
       &#credentials_email {
-        width: 20em;
+        width: 85%;
       }
       &#credentials_password {
-        width: 15em;
-      }
-
-      @include transition_color(0.2s);
-      &:hover {
-        color:  #5b5b5b;
-        border-bottom: 2px solid #5b5b5b;
-      }
-      &:focus {
-        color: black;
-        border-bottom: 2px solid black;
+        width: 75%;
       }
     }
 
   }
 
-  .email,.password {
-    color: gray;
-  }
-
   .login_button {
     @include button;
-    text-transform: uppercase;
   }
 
 }
