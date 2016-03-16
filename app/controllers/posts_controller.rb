@@ -4,7 +4,21 @@ class PostsController < ApplicationController
 
   # Read
   def index
-    @posts = Post.hot.page params[:page]
+    selected_scope = Post.hot # default scope is 'hot'
+
+    sort_type = params[:sort_by]
+    unless sort_type.blank?
+      case sort_type.downcase
+      when "hot"
+        selected_scope = Post.hot
+      when "cold"
+        selected_scope = Post.cold
+      when "recent"
+        selected_scope = Post.recent
+      end
+    end
+
+    @posts = selected_scope.page params[:page] # paginate the current scope
   end
 
   def show

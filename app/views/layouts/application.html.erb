@@ -16,9 +16,9 @@
   </div>
   <div id="navigation_bar">
     <div class='left lateral_list'>
-      <%= link_to "hot", posts_path%>
-      <%= link_to "new", posts_path%>
-      <%= link_to "featured", posts_path%>
+      <%= link_to "hot", posts_path(:sort_by => "hot")%>
+      <%= link_to "new", posts_path(:sort_by => "recent")%>
+      <%= link_to "cold", posts_path(:sort_by => "cold")%>
     </div>
     <div class='right lateral_list'>
       <% if session['member_id'].blank? %>
