@@ -1,0 +1,50 @@
+// Place all the styles related to the Login controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.login_form {
+  margin-left: 2em;
+  width: 25em;
+
+  .email,.password {
+    margin-bottom: 1em;
+
+    input {
+      font-size: 100%;
+      background: transparent;
+      color: #787878;
+      border: 0;
+      border-bottom: 2px solid #787878;
+      margin-bottom: 0.1em;
+      float: right;
+
+      &#credentials_email {
+        width: 20em;
+      }
+      &#credentials_password {
+        width: 15em;
+      }
+
+      @include transition_color(0.2s);
+      &:hover {
+        color:  #5b5b5b;
+        border-bottom: 2px solid #5b5b5b;
+      }
+      &:focus {
+        color: black;
+        border-bottom: 2px solid black;
+      }
+    }
+
+  }
+
+  .email,.password {
+    color: gray;
+  }
+
+  .login_button {
+    @include button;
+    text-transform: uppercase;
+  }
+
+}

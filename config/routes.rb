@@ -10,6 +10,10 @@ Rails.application.routes.draw do
     end
   end
 
+  get 'login' => 'login#index'
+  post 'login' => 'login#login'
+  get 'logout' => 'login#logout'
+
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 

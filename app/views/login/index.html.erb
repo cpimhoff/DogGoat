@@ -1,0 +1,16 @@
+<div class="login_form">
+  <%= form_for :credentials do |f| %>
+    <div class="email">
+      <span>email:</span>
+      <% if @email.blank? %>
+        <% @email = "" %>
+      <% end %>
+      <%= f.email_field :email, :value => @email %>
+    </div>
+    <div class="password">
+      <span>password:</span>
+      <%= f.password_field :password %>
+    </div>
+      <%= f.submit "Login", class: "login_button" %>
+  <% end %>
+</div>

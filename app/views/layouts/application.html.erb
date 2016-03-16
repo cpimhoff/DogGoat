@@ -21,11 +21,24 @@
       <%= link_to "featured", posts_path%>
     </div>
     <div class='right lateral_list'>
-      <span>upload</span>
-      <span>logout</span>
+      <% if session['member_id'].blank? %>
+        <%= link_to "login", controller: "login", action: "index" %>
+      <% else %>
+        <%= session['member_first_name'] %>
+        <%= link_to "upload", new_post_path%>
+        <%= link_to "logout", controller: "login", action: "logout" %>
+      <% end %>
     </div>
   </div>
 </div>
+
+<% unless flash['msg'].blank? %>
+  <div class="flash_block">
+    <div class="msg">
+      <%= flash['msg'] %>
+    </div>
+  </div>
+<% end %>
 
 <div class="main_content">
   <%= yield %>

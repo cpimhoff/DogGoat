@@ -9,7 +9,9 @@
 @import "layout/header.scss";
 @import "layout/footer.scss";
 @import "layout/content.scss";
+@import "layout/flash.scss";
 
 //controllers
 @import "controllers/posts.scss";
 @import "controllers/post_forms.scss";
+@import "controllers/login.scss";
