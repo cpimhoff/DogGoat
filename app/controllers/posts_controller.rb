@@ -4,7 +4,7 @@ class PostsController < ApplicationController
 
   # Read
   def index
-    @posts = Post.hot
+    @posts = Post.hot.page params[:page]
   end
 
   def show

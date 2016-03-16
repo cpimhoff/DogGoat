@@ -9,6 +9,8 @@ class Post < ActiveRecord::Base
   validates_length_of :raw_content, minimum: 300, message: "Your post isn't very long. We'd appreciate it if you could expand on it."
   validates_numericality_of :view_count
 
+  paginates_per 4
+
   scope :recent, -> {order('created_at DESC').visible}
   scope :hot, -> {order('view_count DESC').visible}
   scope :cold, -> {order('view_count ASC').visible}
