@@ -17,7 +17,6 @@ class PostsController < ApplicationController
     if enforce_membership
       @post = Post.new
       @post.title = "Untitled Post"
-      @post.author = Member.current
     end
   end
 

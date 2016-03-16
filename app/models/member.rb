@@ -23,11 +23,4 @@ class Member < ActiveRecord::Base
     return self.first_name + ' ' + self.last_name
   end
 
-  # gets the currently logged in user, if one exists
-  def self.current
-    unless session[:member_id].blank?
-      return Member.find(session[:member_id])
-    end
-  end
-
 end
