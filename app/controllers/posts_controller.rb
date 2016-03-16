@@ -17,6 +17,7 @@ class PostsController < ApplicationController
     if enforce_membership
       @post = Post.new
       @post.title = "Untitled Post"
+      @post.color = "black"
       @post.author = Member.find(session[:member_id])
     end
   end
@@ -26,8 +27,9 @@ class PostsController < ApplicationController
       @post = Post.new(post_params)
       @post.author = Member.find(session[:member_id])
       if @post.save
-        redirect_to posts_path
+        redirect_to post_path(@post)
       else
+        Rails.logger.debug "Something broke: #{@post.errors.full_messages}"
         render 'new'
       end
     end

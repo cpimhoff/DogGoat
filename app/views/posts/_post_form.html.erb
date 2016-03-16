@@ -4,6 +4,7 @@
     <div class="author_tag">
       <%= @post.author.full_name %>
     </div>
+    <%= f.input :color, :as => :hidden %>
     <%= f.input :raw_content %>
     <%= f.action :submit, :as => :button %>
   <% end %>
