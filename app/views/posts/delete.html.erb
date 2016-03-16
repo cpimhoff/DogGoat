@@ -1,9 +1,18 @@
-<h1>Delete Post</h1>
+<div class="delete_post">
+  <div class="warning">
+    Are you sure you would like to delete <strong><%= @post.title %></strong>? This action can not be undone.
+  </div>
 
-<p>
-  Are you sure you would like to delete <%= @post.title %>? This action can not be undone.
-</p>
-
-<%= form_for @post, method: :delete do |f| %>
-  <%= f.submit "Delete." %>
-<% end %>
+  <div class="buttons">
+    <%= semantic_form_for @post, method: :delete do |f| %>
+      <div class="options">
+        <%= link_to post_path(@post) do %>
+          <div class="button">
+            cancel
+          </div>
+        <% end %>
+        <%= f.action :submit, :label => "delete", :as => :button %>
+      </div>
+    <% end %>
+  </div>
+</div>

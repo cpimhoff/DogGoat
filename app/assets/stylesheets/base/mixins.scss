@@ -29,6 +29,14 @@
   }
 }
 
+@mixin warning_block {
+  margin-bottom: 0.5em;
+  padding: 1em;
+  // background-color: rgb(221,221,221);
+  color: rgb(208,0,0);
+  font-style: italic;
+}
+
 @mixin underlined_input {
   font-size: 100%;
   background: transparent;
@@ -36,7 +44,7 @@
   border: 0;
   border-bottom: 2px solid #787878;
   margin-bottom: 0.1em;
-  
+
   @include transition_color(0.2s);
   &:hover {
     color:  #5b5b5b;
