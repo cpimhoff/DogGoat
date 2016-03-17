@@ -11,9 +11,10 @@ class Post < ActiveRecord::Base
 
   paginates_per 4
 
-  scope :recent, -> {order('created_at DESC').visible}
-  scope :hot, -> {order('view_count DESC').visible}
-  scope :cold, -> {order('view_count ASC').visible}
+  scope :by_recent, -> {order('created_at DESC').visible}
+  scope :by_hot, -> {order('view_count DESC').visible}
+  scope :by_cold, -> {order('view_count ASC').visible}
+  scope :featured, -> {where('featured'=> true).visible}
   scope :visible, -> {where('hidden'=> false)}
 
   def content

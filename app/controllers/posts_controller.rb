@@ -4,17 +4,19 @@ class PostsController < ApplicationController
 
   # Read
   def index
-    selected_scope = Post.hot # default scope is 'hot'
+    selected_scope = Post.by_hot # default scope is 'hot'
 
     sort_type = params[:sort_by]
     unless sort_type.blank?
       case sort_type.downcase
       when "hot"
-        selected_scope = Post.hot
+        selected_scope = Post.by_hot
       when "cold"
-        selected_scope = Post.cold
+        selected_scope = Post.by_cold
       when "recent"
-        selected_scope = Post.recent
+        selected_scope = Post.by_recent
+      when "featured"
+        selected_scope = Post.featured.by_recent
       end
     end
 
