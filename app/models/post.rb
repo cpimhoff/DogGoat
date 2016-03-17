@@ -3,9 +3,9 @@ class Post < ActiveRecord::Base
   belongs_to :author, class_name: "Member", foreign_key: "author_id"
 
   validates_presence_of :title, message: "Please give your post a catchy title."
+  validates_length_of :title, maximum: 35, message: "This title is too long."
   validates_presence_of :author_id, message: "Posts must have an authoring member."
   validates_presence_of :color, message: "Posts have to have a color value. It makes the site more approachable."
-  validates_presence_of :raw_content, message: "Looks like you forgot to write something here..."
   validates_length_of :raw_content, minimum: 300, message: "Your post isn't very long. We'd appreciate it if you could expand on it."
   validates_numericality_of :view_count
 
