@@ -11,9 +11,9 @@
     span {
       @include transition_color(0.5s);
       color: #d0d0d0;
-    }
-    span:hover {
-      color: white;
+      &:hover {
+        color: white;
+      }
     }
   }
 
@@ -22,18 +22,7 @@
     color: gray;
     @include nav_bar_structure(1em);
 
-    .lateral_list a {
-      display: inline;
-      text-transform: lowercase;
-      @include transition_color(0.2s);
-    }
-    .lateral_list a:hover {
-      color: white;
-    }
-
-    .left {float: left;}
-    .right {float: right;}
-
+    @include lateral_list(gray);
   }
 
 }

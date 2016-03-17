@@ -16,17 +16,17 @@
   </div>
   <div id="navigation_bar">
     <div class='left lateral_list'>
-      <%= link_to "hot", posts_path(:sort_by => "hot")%>
-      <%= link_to "new", posts_path(:sort_by => "recent")%>
-      <%= link_to "featured", posts_path(:sort_by => "featured")%>
+      <span><%= link_to_unless_current "hot", posts_path(:sort_by => "hot")%></span>
+      <span><%= link_to_unless_current "new", posts_path(:sort_by => "recent")%></span>
+      <span><%= link_to_unless_current "featured", posts_path(:sort_by => "featured")%></span>
     </div>
     <div class='right lateral_list'>
       <% if session['member_id'].blank? %>
-        <%= link_to "login", controller: "login", action: "index" %>
+        <span><%= link_to_unless_current "login", controller: "login", action: "index" %></span>
       <% else %>
         <%= session['member_first_name'] %>
-        <%= link_to "upload", new_post_path%>
-        <%= link_to "logout", controller: "login", action: "logout" %>
+        <span><%= link_to_unless_current "upload", new_post_path%></span>
+        <span><%= link_to_unless_current "logout", controller: "login", action: "logout" %></span>
       <% end %>
     </div>
   </div>
@@ -46,12 +46,12 @@
 
 <div id="site_footer">
   <div class="left lateral_list">
-    <a href="https://github.com/cpimhoff/DogGoat">pre-alpha</a>
+    <span><a href="https://github.com/cpimhoff/DogGoat">pre-alpha</a></span>
   </div>
   <div class='right lateral_list'>
-    <span>contact</span>
-    <span>policy</span>
-    <span>about</span>
+    <span class="inactive">contact</span>
+    <span class="inactive">policy</span>
+    <span class="inactive">about</span>
   </div>
 </div>
 

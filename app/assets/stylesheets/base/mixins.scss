@@ -8,6 +8,24 @@
   font-size: 150%;
 }
 
+@mixin lateral_list($color) {
+  .lateral_list span {
+    text-transform: lowercase;
+    color: lighten($color, 35);
+    a,&.inactive {
+      color: $color;
+    }
+    a {
+      @include transition_color(0.2s);
+      &:hover {
+        color: #dedede;
+      }
+    }
+  }
+  .left {float: left;}
+  .right {float: right;}
+}
+
 @mixin transition_color($duration) {
   -webkit-transition: color $duration;
   transition: color $duration;

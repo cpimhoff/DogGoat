@@ -1,24 +1,10 @@
-//SITE FOOTER
+
 #site_footer {
   background-color: #cccaca;
-  color: #b1b1b1;
+  
+  $text-color: #b1b1b1;
+  color: $text-color;
   @include nav_bar_structure(1em);
-
-  .lateral_list a {
-    text-transform: lowercase;
-    @include transition_color(0.2s);
-  }
-
-  .lateral_list a:hover {
-    color: #dedede;
-  }
-
-  .left {
-    float: left;
-  }
-
-  .right {
-    float: right;
-  }
+  @include lateral_list($text-color);
 
 }
