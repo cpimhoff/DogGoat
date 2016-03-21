@@ -23,4 +23,13 @@ class Member < ActiveRecord::Base
     return self.first_name + ' ' + self.last_name
   end
 
+  include FriendlyId
+  friendly_id :slug_candidates, :use => :slugged
+  def slug_candidates
+    [
+      :full_name,
+      [:full_name, :id]
+    ]
+  end
+
 end
