@@ -1,10 +1,7 @@
 <div class="login_form">
   <%= semantic_form_for :credentials do |f| %>
     <div class="email_field">
-      <% if @email.blank? %>
-        <% @email = "" %>
-      <% end %>
-      <span>email:</span><%= f.input :email, :value => @email %>
+      <span>email:</span><%= f.input :email, :input_html => {:value => @email} %>
     </div>
     <div class="password_field">
       <span>password:</span><%= f.input :password %>
