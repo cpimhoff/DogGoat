@@ -1,0 +1,8 @@
+
+<div class="flash_block">
+  <div class="msg">
+    Search for "<%=params[:query]%>". <%=@posts.count%> <%="result".pluralize(@posts.count)%>.
+  </div>
+</div>
+
+<%= render 'posts/_posts_list' %>

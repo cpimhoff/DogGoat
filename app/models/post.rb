@@ -17,6 +17,10 @@ class Post < ActiveRecord::Base
   scope :featured, -> {where('featured'=> true).visible}
   scope :visible, -> {where('hidden'=> false)}
 
+  def self.search(query)    # very basic search, only searches title
+    return Post.where("title LIKE :query", {:query => "%#{query}%"})
+  end
+
   def content
     renderer = Redcarpet::Render::HTML.new(escape_html: true)
     md = Redcarpet::Markdown.new(renderer, no_intra_emphasis: true, autolink: true, strikethrough: true, lax_spacing: true)

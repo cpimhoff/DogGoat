@@ -74,6 +74,13 @@
   }
 }
 
+@mixin color_placeholder_text($color) {
+  &::-webkit-input-placeholder { color: $color; }
+  &:-moz-placeholder { /* Firefox 18- */ color: $color; }
+  &::-moz-placeholder {  /* Firefox 19+ */ color: $color; }
+  &:-ms-input-placeholder { color: $color; }
+}
+
 @mixin triangle_sloped_up($size, $color) {
   width: 0;
   height: 0;

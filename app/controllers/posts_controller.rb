@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
 
-  before_action :get_post_from_id, :except => ['index','new','create']
+  before_action :get_post_from_id, :except => ['index','search','new','create']
 
   # Read
   def index
@@ -21,6 +21,14 @@ class PostsController < ApplicationController
     end
 
     @posts = selected_scope.page params[:page] # paginate the current scope
+  end
+
+  def search
+    unless params[:query].blank?
+      @posts = Post.search(params[:query]).page params[:page]
+    else
+      redirect_to posts_path
+    end
   end
 
   def show

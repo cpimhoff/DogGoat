@@ -19,6 +19,11 @@
       <span><%= link_to_unless_current "hot", posts_path(:sort_by => "hot")%></span>
       <span><%= link_to_unless_current "new", posts_path(:sort_by => "recent")%></span>
       <span><%= link_to_unless_current "featured", posts_path(:sort_by => "featured")%></span>
+      <span id="search">
+        <%= form_tag search_posts_path, :method => :get do %>
+          <%= text_field_tag :query, params[:query], :placeholder => "search" %>
+        <% end %>
+      </span>
     </div>
     <div class='right lateral_list'>
       <% if session['member_id'].blank? %>
