@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160321052701) do
+ActiveRecord::Schema.define(version: 20160321225239) do
 
   create_table "friendly_id_slugs", force: :cascade do |t|
     t.string   "slug",                      null: false
@@ -40,12 +40,13 @@ ActiveRecord::Schema.define(version: 20160321052701) do
   create_table "members", force: :cascade do |t|
     t.string   "first_name",      limit: 35
     t.string   "last_name",       limit: 45
-    t.string   "email",                                  null: false
-    t.integer  "invites_left",               default: 0, null: false
+    t.string   "email",                                      null: false
+    t.integer  "invites_left",               default: 0,     null: false
     t.string   "password_digest"
-    t.datetime "created_at",                             null: false
-    t.datetime "updated_at",                             null: false
+    t.datetime "created_at",                                 null: false
+    t.datetime "updated_at",                                 null: false
     t.string   "slug"
+    t.boolean  "admin",                      default: false
   end
 
   add_index "members", ["slug"], name: "index_members_on_slug", unique: true

@@ -17,6 +17,9 @@ Rails.application.routes.draw do
   post 'login' => 'login#login'
   get 'logout' => 'login#logout'
 
+  # Routes for the admin zone
+  mount RailsAdmin::Engine => '/admin_zone', as: 'rails_admin'
+
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 

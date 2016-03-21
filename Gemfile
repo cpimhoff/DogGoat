@@ -20,6 +20,8 @@ gem 'redcarpet', '~> 3.3'
 gem 'kaminari'
 # Creates routes and generates URL slugs for Models
 gem 'friendly_id', '~> 5.1.0'
+# Admin Portal for CRUDing database
+gem 'rails_admin'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
