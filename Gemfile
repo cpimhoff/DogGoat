@@ -18,6 +18,8 @@ gem 'formtastic', '~> 3.0'
 gem 'redcarpet', '~> 3.3'
 # Paginater!
 gem 'kaminari'
+# Creates routes and generates URL slugs for Models
+gem 'friendly_id', '~> 5.1.0'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'

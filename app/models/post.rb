@@ -27,4 +27,14 @@ class Post < ActiveRecord::Base
     return md.render(self.raw_content)
   end
 
+  include FriendlyId
+  friendly_id :slug_candidates, :use => :slugged
+  def slug_candidates
+    [
+      :title,
+      "#{self.title} by #{self.author.full_name}",
+      [:title, :id]
+    ]
+  end
+
 end
