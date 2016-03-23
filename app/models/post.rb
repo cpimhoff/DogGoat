@@ -17,8 +17,9 @@ class Post < ActiveRecord::Base
   scope :featured, -> {where('featured'=> true).visible}
   scope :visible, -> {where('hidden'=> false)}
 
-  def self.search(query)    # very basic search, only searches title
-    return Post.where("title LIKE :query", {:query => "%#{query}%"})
+  def self.search(raw_query)
+    query = raw_query.sub(" ", "%")
+    return Post.joins(:author).where("title LIKE :query OR members.first_name || ' ' || members.last_name LIKE :query", {:query => "%#{query}%"})
   end
 
   def content
