@@ -5,7 +5,7 @@
       <%= @post.title %>
     </div>
     <div class="author">
-      <%= @post.author.full_name %>
+      <%= link_to @post.author.full_name, member_path(@post.author) %>
     </div>
   </div>
   <div class="content markdown">
