@@ -3,20 +3,30 @@
   width: 60vw;
   margin-left: 2em;
 
-  input#post_title {
-    @include underlined_input;
-    font-size: 300%;
-  }
+  .heading {
+    @include post_heading;
 
-  .author_tag {
-    position: relative;
-    font-size: 110%;
-    font-weight: bold;
-    font-style: italic;
-    text-transform: lowercase;
-    color: #c1c1c1;
+    input#post_title {
+      margin-top: 0.5em;
+      @include underlined_input;
+      font-size: 300%;
+    }
 
-    margin-bottom: 1em;
+    .author_tag {
+      position: relative;
+      font-size: 110%;
+      font-weight: bold;
+      font-style: italic;
+      text-transform: lowercase;
+      color: #c1c1c1;
+
+      margin-bottom: 1em;
+    }
+
+    select#post_color {
+      width: 8em;
+      margin-bottom: 1em;
+    }
   }
 
   textarea#post_raw_content {
