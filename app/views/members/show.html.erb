@@ -1,0 +1,8 @@
+
+<div class="member_info_block">
+  <h1> <%= @member.full_name %> </h1>
+  <h2> with <%= @posts.total_count %> <%= "post".pluralize(@posts.total_count) %> </h2>
+  <h2> since <%= @member.created_at.to_s :month_year %> </h2>
+</div>
+
+<%= render 'posts/_posts_list' %>

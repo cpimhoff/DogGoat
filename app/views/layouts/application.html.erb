@@ -31,7 +31,7 @@
       <% if session['member_id'].blank? %>
         <span><%= link_to_unless_current "login", controller: "login", action: "index" %></span>
       <% else %>
-        <%= session['member_first_name'] %>
+        <span><%= link_to_unless_current session['member_first_name'], member_path(Member.find(session['member_id'])) %></span>
         <span><%= link_to_unless_current "upload", new_post_path%></span>
         <span><%= link_to_unless_current "logout", controller: "login", action: "logout" %></span>
       <% end %>

@@ -89,11 +89,17 @@
 
       .author,.views {
         font-style: italic;
-        color: #919191;
         text-transform: lowercase;
 
         position: relative;
         top: 3px;
+      }
+
+      .author {
+        color: #817e7e;
+      }
+      .views {
+        color: #aca8a8;
       }
 
       .author:hover {
@@ -102,8 +108,13 @@
 
       .title {
         font-size: 300%;
-        color: #373737;
-        text-transform: capitalize;
+        color: #424141;
+        @include transition_color(0.15s);
+
+        &:hover {
+          color: rgb(0,0,0);
+        }
+
       }
 
     }
