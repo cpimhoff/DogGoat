@@ -73,8 +73,9 @@
 // note that since it's a preprocessed block, you can't use other MD here.
   pre {
     margin: 2em;
+    white-space: pre-wrap;
     code {
-      font-family: serif;
+      font-family: $serif_font_stack;
     }
   }
 
