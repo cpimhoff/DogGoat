@@ -21,7 +21,7 @@ class MembersController < ApplicationController
 
   def update
     if enforce_this_member
-
+      
     end
   end
 
