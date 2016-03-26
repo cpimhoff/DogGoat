@@ -1,2 +1,23 @@
-<h1>Members#claim</h1>
-<p>Find me in app/views/members/claim.html.erb</p>
+<div class="welcome">
+  <h1>Welcome!</h1>
+  <h2>DogGoat is a community of comedians.</h2>
+  <p>
+    If you've recieved an invite code from a friend already a member of DogGoat, you can use it here to create a Member account.
+  </p>
+  <p>
+    Members can post bits they are working on or proud of. If you haven't been invited to become a Member, don't worry, you can still read all the content on the site.
+  </p>
+</div>
+
+<div class="registration">
+  <%= semantic_form_for :account, :url => members_path do |f| %>
+    <h3>Enter your Claim Code:</h3>
+    <%= f.input :claim_code, :input_html => {:value => @code} %>
+    <h4>Enter a password for your account</h4>
+    <%= f.input :password %>
+    <h4>Confirm the password</h4>
+    <%= f.input :password_confirmation %>
+    <br />
+    <%= f.action :submit, :label => "Join", :as => :button %>
+  <% end %>
+</div>

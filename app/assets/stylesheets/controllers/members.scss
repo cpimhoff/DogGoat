@@ -1,4 +1,30 @@
 
+.welcome {
+  * {
+    margin-bottom: 0.5em;
+  }
+}
+
+.registration {
+  background-color: rgb(240,240,240);
+  border-radius: 0.5em;
+
+  margin-top: 2em;
+  padding: 3em;
+
+  * {
+    margin-bottom: 1em;
+  }
+
+  input#account_claim_code {
+    @include underlined_input;
+    text-align: center;
+    text-transform: uppercase;
+    margin-bottom: 1.5em;
+  }
+
+}
+
 .member_info_block {
   margin-bottom: 1em;
   padding: 1em;

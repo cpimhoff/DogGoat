@@ -19,7 +19,7 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :members, except: [:index, :destroy], path_names: { new: "claim", create: "register", edit: "settings"}
+  resources :members, except: [:index, :destroy], path_names: { new: "claim", edit: "settings"}
 
   get 'login' => 'login#index'
   post 'login' => 'login#login'
