@@ -21,6 +21,8 @@ Rails.application.routes.draw do
 
   resources :members, except: [:index, :destroy], path_names: { new: "claim", edit: "settings"}
 
+  resources :invites, except: [:show]
+
   get 'login' => 'login#index'
   post 'login' => 'login#login'
   get 'logout' => 'login#logout'
