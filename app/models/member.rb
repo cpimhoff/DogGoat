@@ -14,7 +14,7 @@ class Member < ActiveRecord::Base
   validates_presence_of :last_name, message: "We need your last name. So we can make you sound professional."
   validates_length_of :last_name, maximum: 45
   validates_format_of :email, with: EMAIL_RX, message: "Please provide a valid email address."
-  validates_confirmation_of :email
+  validates_confirmation_of :email, message: "Email confirmation must match"
   validates_numericality_of :invites_left, greater_than_or_equal_to: 0, only_integer: true
   validates_acceptance_of :terms_of_service # entirely virtual
 

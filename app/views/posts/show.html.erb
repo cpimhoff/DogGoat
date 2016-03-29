@@ -12,10 +12,6 @@
     <%= raw(@post.content) %>
   </div>
   <% if @post.author_id == session[:member_id] %>
-    <%= link_to edit_post_path(@post) do %>
-      <div class="button edit_button">
-        edit
-      </div>
-    <% end %>
+    <%= link_to "edit", edit_post_path(@post), class: "button edit_button" %>
   <% end %>
 </div>

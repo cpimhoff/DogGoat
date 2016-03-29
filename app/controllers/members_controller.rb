@@ -60,7 +60,30 @@ class MembersController < ApplicationController
 
   def update
     if enforce_this_member
-
+      if name_params['first_name'] != @member.first_name || name_params['last_name'] != @member.last_name
+        @member.update(name_params)
+        @member.slug = nil    # change the slug
+      end
+      if email_params['email'] != @member.email
+        @member.update(email_params)
+      end
+      if password_parmas['password'].present? && password_parmas['old_password'].present?
+        if @member.authenticate(password_parmas['old_password']).present?
+          @member.update(model_password_parmas)
+        else
+          flash['msg'] = "That password is incorrect. Prevented password change."
+          render 'settings'
+          return
+        end
+      end
+      if @member.save
+        flash['msg'] = "Your changes were saved."
+        session[:member_first_name] = @member.first_name
+        redirect_to edit_member_path(@member)  # must redirect, in case the slug changed
+      else
+        flash['msg'] = "Something prevented your changes from being saved"
+        render 'settings'
+      end
     end
   end
 
@@ -74,9 +97,25 @@ class MembersController < ApplicationController
       params.require('account').permit('claim_code', 'password', 'password_confirmation')
     end
 
+    def name_params
+      params.require('member').permit('first_name', 'last_name')
+    end
+
+    def email_params
+      params.require('member').permit('email', 'email_confirmation')
+    end
+
+    def password_parmas
+      params.require('member').permit('old_password', 'password', 'password_confirmation')
+    end
+    def model_password_parmas
+      params.require('member').permit('password', 'password_confirmation')
+    end
+
     def enforce_this_member
       if session[:member_id].blank?
         redirect_to login_path
+        return
       end
       unless @member.id == session[:member_id]
         redirect_to posts_path

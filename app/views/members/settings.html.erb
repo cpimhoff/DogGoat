@@ -1,2 +1,26 @@
-<h1>Members#settings</h1>
-<h2>Logged in as <em><%= session[:member_first_name] %></em></h2>
+<h1>Settings</h1>
+
+<div class="edit_member_form">
+  <%= semantic_form_for @member do |f| %>
+    <h3>Name</h3>
+    <%= f.input :first_name, placeholder: "first name" %>
+    <%= f.input :last_name, placeholder: "last name" %>
+
+    <h3>Email</h3>
+    <p>
+      This information is used to log in and for contact from us. It is never shared or displayed publically.
+    </p>
+    <%= f.input :email, placeholder: "email" %>
+    <%= f.input :email_confirmation, placeholder: "confirm email" %>
+
+    <h3>Password Change</h3>
+    <p>
+      God forbid somebody got ahold of your account. The devastation they could cause!
+    </p>
+    <%= f.input :old_password, placeholder: "Current Password" %>
+    <%= f.input :password, placeholder: "New Password" %>
+    <%= f.input :password_confirmation, placeholder: "Confirm New Password" %>
+
+    <%= f.action :submit, label: "Save", as: :button %>
+  <% end %>
+</div>

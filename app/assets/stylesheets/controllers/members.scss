@@ -1,4 +1,29 @@
 
+.edit_member_form {
+
+  h3 {
+    font-weight: bold;
+    margin-top: 1em;
+    margin-bottom: 0.6em;
+  }
+
+  p {
+    margin-bottom: 1em;
+  }
+
+  input {
+    @include underlined_input;
+    margin-bottom: 1em;
+    max-width: 25em;
+  }
+
+  .button {
+    @include button;
+    width: 5em;
+    margin-top: 1em;
+  }
+}
+
 .welcome {
   * {
     margin-bottom: 0.5em;
@@ -46,4 +71,11 @@
     font-style: italic;
     margin-left: 1em;
   }
+
+  .button {
+    @include button;
+    width: 5em;
+    margin-top: 1em;
+  }
+
 }
