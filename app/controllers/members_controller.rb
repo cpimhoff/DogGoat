@@ -11,7 +11,6 @@ class MembersController < ApplicationController
       flash['msg'] = "You can't claim an account while logged in!"
       redirect_to posts_path
     else
-      flash['msg'] = "member is #{session[:member_id]}"
       @code = params[:claim_code]
     end
   end

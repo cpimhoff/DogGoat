@@ -1,11 +1,17 @@
+<div class="login_header">
+  <h1>Login</h1>
+  <h2>Provide your credentials here. If you want access, that is.</h2>
+  <p>
+    If you are trying to claim an account after being provided an invitation code from a pal, go to <strong><%= link_to "Claim Account", new_member_path %></strong>.
+  </p>
+</div>
+
 <div class="login_form">
   <%= semantic_form_for :credentials do |f| %>
-    <div class="email_field">
-      <span>email:</span><%= f.input :email, :input_html => {:value => @email} %>
-    </div>
-    <div class="password_field">
-      <span>password:</span><%= f.input :password %>
-    </div>
-      <%= f.action :submit, :as => :button  %>
+    <h3>Email:</h3>
+    <%= f.input :email, :input_html => {:value => @email} %>
+    <h3>Password:</h3>
+    <%= f.input :password %>
+    <%= f.action :submit, :as => :button  %>
   <% end %>
 </div>
