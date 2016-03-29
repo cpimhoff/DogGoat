@@ -3,6 +3,9 @@
 <div class="edit_member_form">
   <%= semantic_form_for @member do |f| %>
     <h3>Name</h3>
+    <p>
+      Your full name is used around the site as a display name. <b>Note: Changing this will change the URL of your index of articles. In special cases, posts made under the old name will retain URLs containing the old name.</b>
+    </p>
     <%= f.input :first_name, placeholder: "first name" %>
     <%= f.input :last_name, placeholder: "last name" %>
 
