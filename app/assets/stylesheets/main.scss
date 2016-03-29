@@ -18,3 +18,7 @@
 @import "controllers/login.scss";
 @import "controllers/members.scss";
 @import "controllers/invites.scss";
+
+//mailers
+@import "mailers/layout.scss";
+@import "mailers/welcome.scss";

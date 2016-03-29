@@ -21,3 +21,6 @@
 
 en:
   hello: "Hello world"
+  invitation_mailer:
+    welcome:
+      subject: "You've Been Invited to DogGoat"

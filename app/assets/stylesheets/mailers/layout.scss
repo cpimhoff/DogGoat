@@ -1,0 +1,55 @@
+
+.email {
+    .header {
+      color: white;
+
+      #hero {
+        background-color: black;
+        font-size: 6em;
+        padding: 0em;
+        padding-left: 20px;
+        padding-bottom: 0.1em;
+        font-family: monospace;
+
+        span {
+          @include transition_color(0.5s);
+          color: #d0d0d0;
+          &:hover {
+            color: white;
+          }
+        }
+
+        #goat_hero {
+          width: 1em;
+          height: 1em;
+          position: relative;
+          left: -0.6em;
+          top: 0.2em;
+        }
+
+      }
+  }
+
+  .content {
+    margin-top: 2em;
+    padding-left: 3em;
+  }
+
+  .further_info {
+    margin-top: 5em;
+    background-color: black;
+    color: gray;
+    font-size: 90%;
+    padding: 1em;
+
+    .contact {
+      margin-bottom: 1em;
+    }
+    .development_note {
+      a {
+        display: inline;
+      }
+    }
+  }
+
+}

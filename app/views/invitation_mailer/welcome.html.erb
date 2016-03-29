@@ -1,0 +1,24 @@
+<h1>Hey <%= @invite.first_name %>,</h1>
+<h2>You've been invited to DogGoat by <%= @invite.owner.full_name %>!</h2>
+
+<p>
+  DogGoat is community of comedians. Perhaps despite the title, is not about stuff like cat gifs. It's about real comedians sharing their real work. As such, only comedians trusted by the commmunity are invited to contribute.
+</p>
+
+<p>
+  To get started, you can create your account using this invitation:
+</p>
+
+<div class="claim">
+  <h4>Your claim code is: <em><%= @invite.claim_code %></em></h4>
+  <h5>You can create your account at: <em>www.doggoat.com/members/claim</em></h5>
+</div>
+
+<p>
+  We're excited to get to know your style.
+</p>
+
+<p>
+  Best,<br />
+  - Either a Dog or a Goat
+</p>

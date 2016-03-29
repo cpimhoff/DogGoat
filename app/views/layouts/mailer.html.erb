@@ -1,0 +1,29 @@
+<html>
+  <title>DogGoat</title>
+  <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/pure-min.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
+  <body>
+    <div class="email">
+      <div class="header">
+        <div id="hero">
+          <span id="dog"><%= link_to "DOG", posts_path %></span><span id="goat"><%= link_to  "GOAT", posts_path %></span>
+          <%= image_tag "Goat.png", id: "goat_hero" %>
+        </div>
+      </div>
+
+      <div class="content">
+        <%= yield %>
+      </div>
+
+      <div class="further_info">
+        <div class="contact">
+          Sent by DogGoat. Feel free to respond to this email for support or questions.
+        </div>
+        <div class="development_note">
+          DogGoat is currently in ALPHA, which basically means it's an unfinished product. All critical features are completed, and it is in rapid development, with new features being added consistantly. Still, bugs are more common. We welcome your feedback, or even development support at <a href="https://github.com/cpimhoff/DogGoat">our open source repo</a>.
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
