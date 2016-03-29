@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160326164718) do
+ActiveRecord::Schema.define(version: 20160329035010) do
 
   create_table "friendly_id_slugs", force: :cascade do |t|
     t.string   "slug",                      null: false
@@ -27,7 +27,6 @@ ActiveRecord::Schema.define(version: 20160326164718) do
   add_index "friendly_id_slugs", ["sluggable_type"], name: "index_friendly_id_slugs_on_sluggable_type"
 
   create_table "invites", force: :cascade do |t|
-    t.boolean  "claimed",               default: false, null: false
     t.string   "email",                                 null: false
     t.string   "first_name", limit: 35
     t.string   "last_name",  limit: 45
@@ -35,6 +34,7 @@ ActiveRecord::Schema.define(version: 20160326164718) do
     t.datetime "created_at",                            null: false
     t.datetime "updated_at",                            null: false
     t.string   "claim_code", limit: 10
+    t.boolean  "claimed",               default: false
   end
 
   create_table "members", force: :cascade do |t|

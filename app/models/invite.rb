@@ -7,8 +7,8 @@ class Invite < ActiveRecord::Base
   EMAIL_RX = /\A([\w+\-].?)+@[a-z\d\-]+(\.[a-z]+)*\.[a-z]+\z/i
 
   validates_uniqueness_of :claim_code
+  validates_presence_of :claim_code
   validates_presence_of :owner_id, message: "Invites must be sent by a valid member."
-  validates_presence_of :claimed
 
   validates_presence_of :first_name
   validates_presence_of :last_name

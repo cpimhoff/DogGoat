@@ -16,7 +16,6 @@ class Member < ActiveRecord::Base
   validates_format_of :email, with: EMAIL_RX, message: "Please provide a valid email address."
   validates_confirmation_of :email
   validates_numericality_of :invites_left, greater_than_or_equal_to: 0, only_integer: true
-  validates_length_of :last_name, maximum: 45
   validates_acceptance_of :terms_of_service # entirely virtual
 
   def full_name
@@ -30,6 +29,14 @@ class Member < ActiveRecord::Base
       :full_name,
       [:full_name, :id]
     ]
+  end
+
+  def self.new_from_invite(invite)
+    m = Member.new()
+    m.first_name = invite.first_name
+    m.last_name = invite.last_name
+    m.email = invite.email
+    return m
   end
 
 end

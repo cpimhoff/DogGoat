@@ -10,7 +10,7 @@
 </div>
 
 <div class="registration">
-  <%= semantic_form_for :account, :url => members_path do |f| %>
+  <%= semantic_form_for :account, :url => members_path, :method => :post do |f| %>
     <h3>Enter your Claim Code:</h3>
     <%= f.input :claim_code, :input_html => {:value => @code} %>
     <h4>Enter a password for your account</h4>

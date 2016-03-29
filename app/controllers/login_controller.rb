@@ -2,6 +2,11 @@ class LoginController < ApplicationController
 
   #get login/
   def index
+    unless session[:member_id].blank?
+      # guard statement for users already logged in
+      flash['msg'] = "Hey #{session[:member_first_name]}, you're already logged in."
+      redirect_to posts_path
+    end
   end
 
   #post login/
