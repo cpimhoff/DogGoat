@@ -23,6 +23,9 @@ gem 'friendly_id', '~> 5.1.0'
 # Admin Portal for CRUDing database
 gem 'rails_admin'
 
+# Helps manage ENV variables
+gem 'figaro'
+
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
