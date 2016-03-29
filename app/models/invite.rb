@@ -13,9 +13,11 @@ class Invite < ActiveRecord::Base
   validates_format_of :email, with: EMAIL_RX, message: "Please provide a valid email address."
   validates_confirmation_of :email
 
-  def self.generate_new
-    invite = Invite.new
+  def full_name
+    first_name + " " + last_name
+  end
 
+  def self.generate_code
     raw_lang = %w(0 1 2 3 4 5 6 7 8 9)
     spice_lang = %w(DOG GOAT BIT POP CAT ZIP BUN RED HOP WOW BUTT SUN ZOO 007 TOY FEW APE FROG STAR COW GYM SAO ABE GIN MAX MIN ZAP POW WIG DIP GOD SAW AXE QOC CUJ DEW LIT BOX BOP OBJ CPI DAN
       DIN RUB BUM GIT DEE NIP XXX)
@@ -34,12 +36,8 @@ class Invite < ActiveRecord::Base
         generated_code += raw_letter
       end
     end
-    puts spice_lang.count
 
-    generated_code.upcase!
-    invite.claim_code = generated_code
-
-    return invite
+    return generated_code.upcase
   end
 
 end

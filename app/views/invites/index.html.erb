@@ -1,5 +1,18 @@
-<h1>Invite Index</h1>
+<h1>Your Invites</h1>
 
 <% @invites.each do |i| %>
-  <%= i.claim_code %>
+  <% unless i.claimed %>
+    <%= link_to edit_invite_path i do %>
+      <div class="invite_info">
+        <h4><%= i.full_name %></h4>
+        <h6><%= i.claim_code %></h6>
+      </div>
+    <% end %>
+  <% else %>
+    <div class="invite_info">
+      <h4><%= i.full_name %></h4>
+      <h6>CLAIMED</h6>
+    </div>
+  <% end %>
+  <br />
 <% end %>

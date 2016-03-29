@@ -6,11 +6,7 @@
   <div class="buttons">
     <%= semantic_form_for @post, method: :delete do |f| %>
       <div class="options">
-        <%= link_to post_path(@post) do %>
-          <div class="button">
-            cancel
-          </div>
-        <% end %>
+        <%= link_to "Cancel", post_path(@post), class: "button"%>
         <%= f.action :submit, :label => "delete", :as => :button %>
       </div>
     <% end %>

@@ -1,0 +1,45 @@
+<div class="invite_form">
+  <%= semantic_form_for @invite do |f| %>
+    <h3>Name:</h3>
+    <p>
+      This will be their display name (they will be able to change it later). We use this to make our invitation emails sound professional (so try not to spell their name wrong).
+    </p>
+    <%= f.input :first_name, placeholder: "First Name" %>
+    <%= f.input :last_name, placeholder: "Last Name" %>
+
+    <h3>Email:</h3>
+    <p>
+      This email will be used to mail their invite. It will be their login email, but they can, of course, change it if they wish.
+    </p>
+    <%= f.input :email, placeholder: "Email" %>
+    <%= f.input :email_confirmation, placeholder: "Confirm Email" %>
+
+    <h3>Confirmation</h3>
+    <% if is_new %>
+      <p>
+        By clicking "send", you are sending them an invite with the information above. You will also be using one of your <%= @member.invites_left %> remaining invitations. You can rescind this invite any time <em>before</em> this person claims it (but that's pretty mean).
+      </p>
+      <%= f.action :submit, label: "Send", as: :button %>
+    <% else %>
+      <p>
+        By clicking "send again" a new invitation will be sent with the updated information (but with the same code). If you wish to generate a new code, you must rescind this invite then send out a new one.
+      </p>
+      <%= f.action :submit, label: "Send Again", as: :button %>
+    <% end %>
+  <% end %>
+
+<% unless is_new %>
+  <div class="rescind">
+    <h3>Rescind</h3>
+    <p>
+      By clicking "rescind", you are voiding the invitation. The invitation code that has already been sent will no longer be valid and no longer allow the registration of a Member account. This is a pretty mean thing to do.
+    </p>
+    <p>
+      You will be returned the invitation you used to create this.
+    </p>
+    <%= semantic_form_for @invite, method: :delete do |f| %>
+      <%= f.action :submit, label: "Rescind", as: :button %>
+    <% end %>
+  </div>
+<% end %>
+</div>
