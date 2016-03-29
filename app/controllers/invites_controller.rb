@@ -26,6 +26,9 @@ class InvitesController < ApplicationController
     if @invite.save
       @member.invites_left -= 1
       @member.save
+
+      InvitationMailer.welcome(@invite).deliver
+
       flash['msg'] = "Your invite has been saved and will be sent to '#{@invite.email}'. You have #{@member.invites_left} #{"invite".pluralize(@member.invites_left)} left."
       redirect_to invites_path
     else
@@ -40,6 +43,7 @@ class InvitesController < ApplicationController
   def update
     @invite.update(invite_params)
     if @invite.save
+      InvitationMailer.welcome(@invite).deliver
       flash['msg'] = "Your invite was updated and an updated email will be sent to '#{@invite.email}'."
       redirect_to invites_path
     else
