@@ -16,8 +16,7 @@
 !/log/.keep
 /tmp
 
-# Ignore secrets!
-/config/secrets.yml
+# We used to ignore all secrets in secrets.yml, but since production reads from ENV anyways, it is safe to include. Dev and Test secrets aren't relevant to production.
 
 # Ignore application configuration
 /config/application.yml
