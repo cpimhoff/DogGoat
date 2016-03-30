@@ -3,7 +3,7 @@ class MembersController < ApplicationController
   before_action :get_member_from_id, :except => ['claim', 'create']
 
   def show
-    @posts = @member.posts.page params[:page]
+    @posts = @member.posts.visible.page params[:page]
   end
 
   def claim
