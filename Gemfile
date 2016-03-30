@@ -22,7 +22,7 @@ gem 'friendly_id', '~> 5.1.0'
 # Admin Portal for CRUDing database
 gem 'rails_admin'
 
-# Helps manage ENV variables
+# Helps manage ENV variables (in LOCAL builds only!)
 gem 'figaro'
 
 # Use jquery as the JavaScript library
