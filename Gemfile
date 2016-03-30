@@ -11,6 +11,10 @@ gem 'uglifier', '>= 1.3.0'
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 4.1.0'
 
+# Preprocess outgoing emails to inline styles and link images
+gem 'premailer-rails'
+gem 'nokogiri' # dependency for 'premailer-rails'
+
 # Simple, RESTful compatible form semantic sugar
 gem 'formtastic', '~> 3.0'
 # Markdown parser and render
