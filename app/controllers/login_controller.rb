@@ -50,7 +50,7 @@ class LoginController < ApplicationController
     unless @account.blank?
       new_password = generate_random_password()
       @account.password = new_password
-      # email them the new password...
+      AccountMailer.password_recovery(@account, @email).deliver
       if @account.save
         flash['msg'] = "Your password was reset and a recovery email has been sent to '#{@email}'"
         redirect_to action: "index"

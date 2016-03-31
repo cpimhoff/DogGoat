@@ -20,7 +20,10 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  hello: "Hello World!"
   invitation_mailer:
     welcome:
       subject: "You've Been Invited to DogGoat"
+  account_mailer:
+    password_recovery:
+      subject: "DogGoat Password Recovery"
