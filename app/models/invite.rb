@@ -13,6 +13,8 @@ class Invite < ActiveRecord::Base
   validates_format_of :email, with: EMAIL_RX, message: "Please provide a valid email address."
   validates_confirmation_of :email
 
+  validates_with InviteUniqueEmailValidator
+
   def full_name
     self.first_name + " " + self.last_name
   end
