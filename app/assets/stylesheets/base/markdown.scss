@@ -20,6 +20,7 @@
 
   h1 {
     font-size: 200%;
+    margin-bottom: 0.3em;
   }
 
   h2 {
@@ -27,8 +28,8 @@
   }
 
   h3 {
-    margin-left: 0.5em;
-    margin-bottom: 0.2em;
+    font-size: 125%;
+    margin-bottom: 0em;
   }
 
   h4 {
@@ -41,6 +42,11 @@
   }
 
   h5 {
+    padding: 0.2em;
+    padding-left: 0.4em;
+    background-color: rgb(91,91,91);
+    border-radius: 1px;
+    color: white;
   }
 
   h6 {
