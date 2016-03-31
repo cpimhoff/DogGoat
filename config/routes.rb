@@ -1,9 +1,4 @@
 Rails.application.routes.draw do
-  get 'members/show'
-
-  get 'members/claim'
-
-  get 'members/settings'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

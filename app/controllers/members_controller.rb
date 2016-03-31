@@ -1,17 +1,18 @@
 class MembersController < ApplicationController
 
-  before_action :get_member_from_id, :except => ['claim', 'create']
+  before_action :get_member_from_id, :except => ['new', 'create']
 
   def show
     @posts = @member.posts.visible.page params[:page]
   end
 
-  def claim
+  def new
     unless session[:member_id].blank?
       flash['msg'] = "You can't claim an account while logged in!"
       redirect_to posts_path
     else
       @code = params[:claim_code]
+      render 'claim'
     end
   end
 
