@@ -1,4 +1,16 @@
 class ApplicationMailer < ActionMailer::Base
-  default from: ENV['gmail_address']
+  require 'mail'
+
+  default from: "DogGoat <#{ENV['gmail_address']}>"
   layout 'mailer'
+
+  def server_address
+    email = ENV['gmail_address']
+    name = "DogGoat"
+
+    address = Mail::Address.new email
+    address.display_name = name.dup
+    address.format # returns "DogGoat <email>"
+  end
+
 end
