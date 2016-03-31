@@ -4,6 +4,10 @@ class ApplicationMailer < ActionMailer::Base
   default from: "DogGoat <#{ENV['gmail_address']}>"
   layout 'mailer'
 
+  def attach_layout_resources
+    attachments.inline['doggoat.png'] = File.read("app/assets/images/goat.png")
+  end
+
   def server_address
     email = ENV['gmail_address']
     name = "DogGoat"

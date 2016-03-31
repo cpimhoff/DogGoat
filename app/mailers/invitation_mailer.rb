@@ -5,6 +5,7 @@ class InvitationMailer < ApplicationMailer
   #   en.invitation_mailer.welcome.subject
   def welcome(invite)
     @invite = invite
+    self.attach_layout_resources
     mail to: invite.email
   end
 end

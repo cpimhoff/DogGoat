@@ -7,8 +7,8 @@
     <div class="email">
       <div class="header">
         <div id="hero">
-          <span id="dog"><%= link_to "DOG", posts_path %></span><span id="goat"><%= link_to  "GOAT", posts_path %></span>
-          <%= image_tag "Goat.png", id: "goat_hero" %>
+          <span id="dog"><%= link_to "DOG", posts_url(host:"doggoat.com") %></span><span id="goat"><%= link_to  "GOAT", posts_url(host:"doggoat.com") %></span>
+          <%= image_tag attachments['doggoat.png'].url, id: "goat_hero" %>
         </div>
       </div>
 
