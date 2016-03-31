@@ -24,6 +24,12 @@ Rails.application.routes.draw do
   get 'login/lost_password' => 'login#lost_password'
   post 'login/lost_password' => 'login#recover_password'
 
+  get 'about' => 'static#about'
+  get 'contact' => 'static#contact'
+  get 'policy' => 'static#policy'
+  get 'markdown' => 'static#markdown'
+  get 'prerelease' => 'static#prerelease'
+
   # Routes for the admin zone
   mount RailsAdmin::Engine => '/admin_zone', as: 'rails_admin'
 
