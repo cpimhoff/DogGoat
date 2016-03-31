@@ -8,10 +8,14 @@ class InviteUniqueEmailValidator < ActiveModel::Validator
       record.errors.add :email, "The person at this address is already a Member of DogGoat"
       return
     end
-    invite = Invite.where(email: record.email).first
-    if invite.present?
-      # The email has been invited:
-      record.errors.add :email, "The person at this address has already been invited to DogGoat by #{invite.owner.full_name}"
+    invites = Invite.where(email: record.email)
+    invites.each do |i|
+      if i.id != record.id
+        if i.claimed == false || i.claimed == nil
+          # The email has been invited:
+          record.errors.add :email, "The person at this address has already been invited to DogGoat by #{i.owner.full_name}"
+        end
+      end
     end
   end
 

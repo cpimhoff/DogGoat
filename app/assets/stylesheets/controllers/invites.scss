@@ -6,8 +6,15 @@
   background-color: rgb(237,237,237);
   border-radius: 2px;
   padding: 1em;
-  margin-bottom: 1em;
+  margin-bottom: 0.4em;
   width: 20em;
+
+  -webkit-transition: background-color 0.2s;
+  transition: background-color 0.2s;
+  &.unclaimed:hover {
+    background-color: rgb(227,227,227);
+  }
+
   h4 {
 
   }

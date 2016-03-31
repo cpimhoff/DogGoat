@@ -8,16 +8,15 @@
 <% @invites.each do |i| %>
   <% unless i.claimed %>
     <%= link_to edit_invite_path i do %>
-      <div class="invite_info">
+      <div class="invite_info unclaimed">
         <h4><%= i.full_name %></h4>
         <h6 class="code"><%= i.claim_code %></h6>
       </div>
     <% end %>
   <% else %>
-    <div class="invite_info">
+    <div class="invite_info claimed">
       <h4><%= i.full_name %></h4>
       <h6 class="claimed">CLAIMED</h6>
     </div>
   <% end %>
-  <br />
 <% end %>

@@ -18,6 +18,8 @@ class Member < ActiveRecord::Base
   validates_numericality_of :invites_left, greater_than_or_equal_to: 0, only_integer: true
   validates_acceptance_of :terms_of_service # entirely virtual
 
+  validates_with MemberUniqueEmailValidator
+
   def full_name
     return self.first_name + ' ' + self.last_name
   end
