@@ -1,6 +1,9 @@
 # DogGoat
-_www.doggoat.com_
 
-**DogGoat**, perhaps despite the title, is not about stuff like cat gifs. It's about real comedians sharing their real work. It's not about *LOLs* per minute, or share buttons, it's about comedians having a confident place to post what they have been working on and see what sticks. It's a hub for readers to find consistently cutting edge humor. It's bits, not gags.
+Let's look at comedy on the internet. Yes: cats are great. Oh baby: Buzzfeed really knows how to make a quiz.
 
-**DogGoat** is a webapp built on top of RubyOnRails and a relational database. Primary development has been on the part of *Charlie Imhoff* and is licensed under Apache License (Version 2.0).
+Where do comedians go when they have a nice funny piece and don't want to publish a book? The chaotic environment of online forums and share buttons?
+
+DogGoat was created to be an oasis for comedians to share their real work. And it's a hub for readers who want well crafted humor.
+
+**DogGoat** is a webapp built on top of RubyOnRails and a Postgres database. Primary development has been on the part of *Charlie Imhoff* and the app is licensed under the Apache License (Version 2.0).
