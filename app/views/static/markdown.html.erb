@@ -2,6 +2,167 @@
 <div class="markdown static_text_page">
   <h1>Markdown Guide</h1>
   <p>
-    soon...
+    Markdown is a really excellent way to author content on the internet, in a simple form, while maintaining a consistant look across a single site.
   </p>
+
+  <p>
+    Everything authored for DogGoat is either in plain text (no formatting) or Markdown. When you just want to write plain text, there's nothing to specify. Plain text and Markdown are cross compatible.
+  </p>
+
+  <h2>Formatting</h2>
+  <p>
+    Markdown is a <em>markup</em> language (that's where it gets its name). Markdown is essencially plain text with some special symbols reserved to define simple formatting.
+  </p>
+
+  <p>
+    <em>_Emphasized Text_</em><br />
+    Emphasized (italic) text can be attained by surrounding text with '<code>_</code>'.
+    <div class="md-demo">
+      <div class="input input_with_label">Max literally _killed_ a guy.</div>
+      <div class="output output_with_label">Max literally <em>killed</em> a guy.</div>
+    </div>
+  </p>
+
+  <p>
+    <b>**Bold Text**</b><br />
+    Bold text can be created by surrounding text with '<code>**</code>'.
+    <div class="md-demo">
+      <div class="input input_with_label">Max just broke **the law**!</div>
+      <div class="output output_with_label">Max just broke <b>the law</b>!</div>
+    </div>
+  </p>
+
+  <h3>### Headings</h3>
+  <p>
+    Starting a line with <code>#</code> signs create headings. The amount of <code>#</code>s decides how the heading is displayed.
+  </p>
+  <p>
+    A single <code>#</code> symbol is the largest heading, <code>##</code> generates a slightly smaller heading and so on.
+  </p>
+  <p>
+    On DogGoat, to allow for scene headings and character dialog, <code>#####</code> (5) results in a scene heading, and <code>######</code> (6) results in a character name.
+  </p>
+  <div class="md-demo wide">
+    <div class="input">
+      # My Great Book<br />
+      ## Dragons and Friendships<br />
+      ### Act One: The Dragons<br />
+      #### Chapter One: The Idea<br />
+      ##### Scene One - int. Treehouse<br />
+      ###### Carl<br />What if we, I don't know, go befriend that dragon?<br />
+      ###### Ben<br />Not _this_ again.
+    </div>
+    <div class="output scaled_down" style="">
+      <h1>My Great Book</h1>
+      <h2>Dragons and Friendships</h2>
+      <h3>Act One: The Dragons</h3>
+      <h4>Chapter One: The Idea</h4>
+      <h5>Scene One - int. Treehouse</h5>
+      <h6>Carl</h6>
+      <p>
+        What if we, I don't know, go befriend that dragon?
+      </p><br />
+      <h6>Ben</h6>
+      <p>
+        Not <em>this</em> again.
+      </p>
+    </div>
+  </div>
+
+  <h3>Lists</h3>
+  <p>
+    Lists are dead simple in Markdown. They're pretty much formatted automatically. Just place '<code>-</code>' at the start of items for an unordered list:
+  </p>
+  <div class="md-demo">
+    <div class="input">
+        ## Sharp Things<br />
+        - Swords<br />
+        - Pencils (sharpened)<br />
+        - Bananas (sharpened)
+    </div>
+    <div class="output list_shift">
+      <h2 style="margin-top: 0.2em;">Sharp Things</h2>
+    <ul>
+      <li>Swords</li>
+      <li>Pencils (sharpened)</li>
+      <li>Bananas (sharpened)</li>
+    </ul>
+  </div>
+  </div>
+
+  <p>
+    For an ordered list, just ensure you have the numbers followed by a period; one per line:
+  </p>
+
+  <div class="md-demo">
+    <div class="input">
+        ## The Plan:<br />
+        1. Assassinate The President's Cat<br />
+        2. probably some legal debate<br />
+        3. **Dog President!**
+    </div>
+    <div class="output list_shift">
+      <h2 style="margin-top: 0.2em;">The Plan:</h2>
+    <ol>
+      <li>Assassinate The President's Cat</li>
+      <li>probably some legal debate</li>
+      <li><b>Dog President!</b></li>
+    </ol>
+  </div>
+  </div>
+
+  <p>
+    ~~<del>Strikethrough</del>~~<br />
+    You can cross out text by surrounding it with tildes '<code>~~</code>'.
+    <div class="md-demo">
+      <div class="input input_with_label">I ~~hate~~ love you.</div>
+      <div class="output output_with_label">I <del>hate</del> love you.</div>
+    </div>
+  </p>
+
+  <h3>Fancy Blocks</h3>
+  <p>
+    If you want a section of text to stand out, such as with a quote, you can place 4 spaces (or one tab) at the start of a line.
+    <div class="md-demo">
+      <div class="input"><span class="four_space">"I like Turtles."</div>
+      <div class="output output_with_label"><pre><code>"I like Turtles."</code></pre></div>
+    </div>
+  </p>
+
+  <h3>Whitespace</h3>
+  <p>
+    Because of the way webpages are displayed, if you have extra whitespace in your Markdown, it will be compressed when displaying.
+  </p>
+  <div class="md-demo">
+    <div class="input">
+      Roses are Red,<br />
+      <br />
+      <br />
+      Violets are <pre></pre>Blue.
+    </div>
+    <div class="output">
+      Roses are Red,<br/>
+      Violets are Blue.
+    </br/>
+    </div>
+  </div>
+
+  <h3>Unsupported Markdown</h3>
+  <p>
+    Currently, images and tables are Markdown features that DogGoat does not support.
+  </p>
+
+  <h2>Write-Preview Applications</h2>
+  <p>
+    There are lots of writing apps which help you write Markdown if you like seeing your formatting as you use it.
+  </p>
+
+  <p>
+    <a href="http://macdown.uranusjr.com">Macdown</a> is a free, open source editor for Mac. <a href="https://ia.net/writer/mac/">iA Writer</a> has more features and costs a bit, but is also avaliable on mobile devices. On PC, <a href="http://markdownpad.com">MarkdownPad</a> is a good solution.
+  </p>
+
+  <p>
+    Again, keep in mind. Markdown is <em>just plain text</em>. So you can write in Markdown in just TextEdit or NotePad if you like.
+  </p>
+
 </div>

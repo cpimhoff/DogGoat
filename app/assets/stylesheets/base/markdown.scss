@@ -50,6 +50,10 @@
 
   h6 {
     display: inline;
+    margin-right: 1em;
+    &::after {
+      content: ":";
+    }
     +p {
       display: inline;
       +p {
