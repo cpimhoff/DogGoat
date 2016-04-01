@@ -55,12 +55,12 @@
 
 <div id="site_footer">
   <div class="left lateral_list">
-    <span><a href="https://github.com/cpimhoff/DogGoat">pre-alpha</a></span>
+    <span><%= link_to_unless_current "pre-alpha", controller: "static", action: "prerelease" %></span>
   </div>
   <div class='right lateral_list'>
-    <span class="inactive">contact</span>
-    <span class="inactive">policy</span>
-    <span class="inactive">about</span>
+    <span><%= link_to_unless_current "about", controller: "static", action: "about" %></span>
+    <span><%= link_to_unless_current "contact", controller: "static", action: "contact" %></span>
+    <span><%= link_to_unless_current "policy", controller: "static", action: "policy" %></span>
   </div>
 </div>
 
