@@ -6,3 +6,17 @@
   max-width: 55em;
   margin-left: 2em;
 }
+
+.about_page {
+  img {
+    margin-left: 50px;
+  }
+
+  img.long {
+    width: 80%;
+  }
+
+  img.medium_sqr {
+    width: 35%;
+  }
+}

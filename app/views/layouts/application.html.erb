@@ -55,10 +55,10 @@
 
 <div id="site_footer">
   <div class="left lateral_list">
+    <span><%= link_to_unless_current "about", controller: "static", action: "about" %></span>
     <span><%= link_to_unless_current "pre-alpha", controller: "static", action: "prerelease" %></span>
   </div>
   <div class='right lateral_list'>
-    <span><%= link_to_unless_current "about", controller: "static", action: "about" %></span>
     <span><%= link_to_unless_current "contact", controller: "static", action: "contact" %></span>
     <span><%= link_to_unless_current "policy", controller: "static", action: "policy" %></span>
   </div>
