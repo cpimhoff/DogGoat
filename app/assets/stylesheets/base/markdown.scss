@@ -63,6 +63,7 @@
   a {
     text-decoration: underline;
     text-decoration-style: dotted;
+    display: inline;
   }
   a:hover { text-decoration-style: solid; }
 
@@ -88,6 +89,7 @@
 
   ul,ol {
     list-style-type: none;
+    margin-bottom: 1em;
     li {
       position: relative;
       left: -1em;
