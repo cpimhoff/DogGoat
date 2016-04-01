@@ -49,6 +49,23 @@
     }
   }
 
+  .hint {
+    font-style: italic;
+    color: rgb(195,195,195);
+    padding-left: 1em;
+    margin-bottom: 1em;
+    text-align: center;
+    a {
+      display: inline;
+      text-decoration: underline;
+      text-decoration-style: dotted;
+      @include transition_color(0.2s);
+      &:hover {
+        color: rgb(152,151,151);
+      }
+    }
+  }
+
   .button {
     @include button;
   }
