@@ -37,6 +37,7 @@ class MembersController < ApplicationController
             redirect_to edit_member_path(@member)
           else
             flash['msg'] = "Hmmm.. Something went wrong creating your account. Contact support if this issue persists."
+            flash['msg'] = "Error is: #{@member.errors.full_messages}"
             render 'claim'
           end
         else
