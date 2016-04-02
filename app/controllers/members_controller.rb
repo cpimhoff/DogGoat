@@ -28,14 +28,19 @@ class MembersController < ApplicationController
           @member = Member.new_from_invite(@invite)
           # Set the password (from params)
           @member.password = registration_params['password']
-          # If all went well claim the invite, log them in, and redirect to their settings
+          # Claim the invite (so invite doesn't conflict with Member uniqueness check)
+          @invite.claimed = true
+          @invite.save
+          # Attempt to create Member, then log in
           if (@member.save)
             session[:member_id] = @member.id
             session[:member_first_name] = @member.first_name
-            @invite.claimed = true
-            @invite.save
             redirect_to edit_member_path(@member)
           else
+            # Something bad happened, unclaim the invite
+            @invite.claimed = false
+            @invite.save
+
             flash['msg'] = "Hmmm.. Something went wrong creating your account. Contact support if this issue persists."
             flash['msg'] = "Error is: #{@member.errors.full_messages}"
             render 'claim'
