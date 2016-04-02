@@ -41,8 +41,7 @@ class MembersController < ApplicationController
             @invite.claimed = false
             @invite.save
 
-            flash['msg'] = "Hmmm.. Something went wrong creating your account. Contact support if this issue persists."
-            flash['msg'] = "Error is: #{@member.errors.full_messages}"
+            flash['msg'] = "Hmmm.. Something went wrong creating your account. Contact support if this issue persists. The error was: #{@member.errors.full_messages}"
             render 'claim'
           end
         else
