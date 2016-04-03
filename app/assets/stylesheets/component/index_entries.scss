@@ -1,5 +1,8 @@
 .post-index-preview {
-  margin-bottom: 1.2em;
+  margin-bottom: 1em;
+  @media (max-width: 470px) { //scale margins on smaller devices
+    margin-bottom: 0.5em;
+  }
   display:flex;
 
     .post_details {

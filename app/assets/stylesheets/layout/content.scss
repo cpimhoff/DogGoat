@@ -1,5 +1,9 @@
 .main_content {
   margin: 1.75em;
   margin-right: 3em;
+  @media (max-width: 470px) { //shrink margins on smaller devices (every pixel counts!)
+    margin: 1em;
+    margin-right: 1em;
+  }
   min-height: 80vh;
 }
