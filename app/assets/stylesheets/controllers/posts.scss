@@ -82,59 +82,7 @@
 
 }
 
-.posts_list {
-
-  .post {
-    $backing: #e3e3e3;
-
-    margin-bottom: 1.2em;
-    display:flex;
-
-      .post_details {
-      padding: 1em;
-      background-color: $backing;
-      border-left: medium solid black;
-
-      .author,.views {
-        font-style: italic;
-        text-transform: lowercase;
-
-        position: relative;
-        top: 3px;
-      }
-
-      .author {
-        color: #817e7e;
-      }
-      .views {
-        color: #aca8a8;
-      }
-
-      .author:hover {
-        text-decoration: underline;
-      }
-
-      .title {
-        font-size: 300%;
-        color: #424141;
-        @include transition_color(0.15s);
-
-        &:hover {
-          color: rgb(0,0,0);
-        }
-
-      }
-
-    }
-
-    $post_edge_height: 6em;
-    .post_edge_tip {
-      @include parallelogram_flag_tip($post_edge_height, $backing);
-    }
-    .post_edge_fill {
-      @include parallelogram_flag_fill($post_edge_height, $backing);
-    }
-  }
+.posts-list {
 
   nav.pagination {
 

@@ -2,28 +2,6 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.invite_info {
-  background-color: rgb(237,237,237);
-  border-radius: 2px;
-  padding: 1em;
-  margin-bottom: 0.4em;
-  width: 20em;
-
-  -webkit-transition: background-color 0.2s;
-  transition: background-color 0.2s;
-  &.unclaimed:hover {
-    background-color: rgb(227,227,227);
-  }
-
-  h4 {
-
-  }
-  h6 {
-    margin-left: 1em;
-    color: rgb(162,162,162);
-  }
-}
-
 .invite_form {
   h3 {
     font-weight: bold;
