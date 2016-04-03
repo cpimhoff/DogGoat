@@ -49,7 +49,9 @@
 
     .title {
       font-size: 300%;
-      text-transform: capitalize;
+      @media (max-width: 470px) { //scale down on smaller devices
+        font-size: 200%;
+      }
     }
 
     .author {
