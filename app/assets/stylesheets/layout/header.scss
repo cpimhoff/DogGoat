@@ -5,6 +5,9 @@
   #hero {
     background-color: black;
     font-size: 10vw;
+    @media (min-width: 700px) { //max width for hero text
+      font-size: 4.375em;
+    }
     padding: 0em;
     padding-left: 20px;
     font-family: $serif-font-stack;
