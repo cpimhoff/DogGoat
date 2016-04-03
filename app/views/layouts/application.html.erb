@@ -19,24 +19,29 @@
     <%= image_tag hero_image_options[rand(hero_image_options.count)], id: "goat_hero" %>
   </div>
   <div id="navigation_bar">
-    <div class='left lateral_list'>
-      <span><%= link_to_unless_current "hot", posts_path(:sort_by => "hot")%></span>
-      <span><%= link_to_unless_current "new", posts_path(:sort_by => "recent")%></span>
-      <span><%= link_to_unless_current "featured", posts_path(:sort_by => "featured")%></span>
-      <span id="search">
-        <%= form_tag search_posts_path, :method => :get do %>
-          <%= text_field_tag :query, params[:query], :placeholder => "search" %>
+    <div class="pure-menu pure-menu-horizontal pure-menu-scrollable">
+      <ul class="pure-menu-list">
+        <li class="pure-menu-item">
+          <%= link_to_unless_current "hot", posts_path(:sort_by => "hot")%></li>
+        <li class="pure-menu-item">
+          <%= link_to_unless_current "new", posts_path(:sort_by => "recent")%></li>
+        <li class="pure-menu-item">
+          <%= link_to_unless_current "featured", posts_path(:sort_by => "featured")%></li>
+
+        <li class="pure-menu-item"><span class="h-pad">~</span></li>
+
+        <% if session['member_id'].blank? %>
+          <li class="pure-menu-item">
+            <%= link_to_unless_current "login", controller: "login", action: "index" %></li>
+        <% else %>
+          <li class="pure-menu-item">
+            <%= link_to_unless_current session['member_first_name'], member_path(Member.find(session['member_id'])) %></li>
+          <li class="pure-menu-item">
+            <%= link_to_unless_current "contribute", new_post_path%></li>
+          <li class="pure-menu-item">
+            <%= link_to_unless_current "logout", controller: "login", action: "logout" %></li>
         <% end %>
-      </span>
-    </div>
-    <div class='right lateral_list'>
-      <% if session['member_id'].blank? %>
-        <span><%= link_to_unless_current "login", controller: "login", action: "index" %></span>
-      <% else %>
-        <span><%= link_to_unless_current session['member_first_name'], member_path(Member.find(session['member_id'])) %></span>
-        <span><%= link_to_unless_current "contribute", new_post_path%></span>
-        <span><%= link_to_unless_current "logout", controller: "login", action: "logout" %></span>
-      <% end %>
+      </ul>
     </div>
   </div>
 </div>
@@ -76,14 +81,28 @@
 </div>
 
 <div id="site_footer">
-  <div class="left lateral_list">
-    <span><%= link_to_unless_current "about", controller: "static", action: "about" %></span>
-    <span><%= link_to_unless_current "alpha", controller: "static", action: "prerelease" %></span>
+  <div class="pure-menu pure-menu-horizontal pure-menu-scrollable">
+    <ul class="pure-menu-list">
+      <li class="pure-menu-item">
+        <%= link_to_unless_current "about", controller: "static", action: "about" %></li>
+      <li class="pure-menu-item">
+        <%= link_to_unless_current "alpha", controller: "static", action: "prerelease" %></li>
+      <li class="pure-menu-item"><span class="h-pad">~</span></li>
+      <li class="pure-menu-item">
+        <%= link_to_unless_current "contact", controller: "static", action: "contact" %></li>
+      <li class="pure-menu-item">
+        <%= link_to_unless_current "policy", controller: "static", action: "policy" %></li>
+    </ul>
+  </div>
+
+  <!-- <div class="left lateral_list">
+    <span></span>
+    <span></span>
   </div>
   <div class='right lateral_list'>
-    <span><%= link_to_unless_current "contact", controller: "static", action: "contact" %></span>
-    <span><%= link_to_unless_current "policy", controller: "static", action: "policy" %></span>
-  </div>
+    <span></span>
+    <span></span>
+  </div> -->
 </div>
 
 </body>

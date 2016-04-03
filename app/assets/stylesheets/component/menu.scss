@@ -1,0 +1,19 @@
+
+.pure-menu-horizontal {
+  background-color: rgb(73,73,73);
+  padding-left: 1em;
+
+  * { // will only apply to current page
+    color: rgb(244,244,244);
+  }
+
+  a, span {
+    color: rgb(162,162,162);
+  }
+  a {
+    @include transition_color(0.2s);
+    &:hover {
+      color:  rgb(215,215,215);
+    }
+  }
+}

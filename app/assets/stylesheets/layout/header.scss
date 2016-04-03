@@ -4,7 +4,7 @@
 
   #hero {
     background-color: black;
-    font-size: 4.5em;
+    font-size: 10vw;
     padding: 0em;
     padding-left: 20px;
     font-family: $serif-font-stack;
@@ -24,45 +24,13 @@
       left: -0.2em;
       top: 0.2em;
     }
-
   }
 
   #navigation_bar {
-    background-color: #494949;
-    color: gray;
-    @include nav_bar_structure(1em);
-    @include lateral_list(gray);
-
-    #search {
-      color: gray;
-      background: none;
-      box-shadow: none;
-      border-style: none;
-      display: inline;
-
-      * {
-        display: inline;
-      }
-      input {
-        font-size: 90%;
-        width: 10em;
-        background: transparent;
-        color: #787878;
-        @include color_placeholder_text(#6b6868);
-        border: 0;
-        border-bottom: 2px solid gray;
-        margin-bottom: 0.1em;
-
-        @include transition_color(0.2s);
-        &:hover {
-          color:  #b4b4b4;
-          border-bottom: 2px solid #b4b4b4;
-        }
-        &:focus {
-          color: rgb(231,231,231);
-          border-bottom: 2px solid rgb(231,231,231);
-        }
-      }
+    .pure-menu {
+      padding-left: 1em;
+      padding-right: 1em;
+      font-size: 120%;
     }
   }
 

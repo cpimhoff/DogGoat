@@ -6,6 +6,10 @@
 @import "base/markdown.scss";
 @import "base/formtastic_override.scss";
 
+//component
+@import "component/menu.scss";
+@import "component/spacing.scss";
+
 //layout
 @import "layout/header.scss";
 @import "layout/footer.scss";

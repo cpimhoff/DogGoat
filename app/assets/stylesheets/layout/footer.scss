@@ -1,10 +1,20 @@
 
 #site_footer {
-  background-color: #cccaca;
-  
-  $text-color: #b1b1b1;
-  color: $text-color;
-  @include nav_bar_structure(1em);
-  @include lateral_list($text-color);
+  .pure-menu {
+    background-color: rgb(210,210,210);
+    padding-left: 1em;
+    padding-right: 1em;
+    font-size: 120%;
 
+    * { //only applies to current page
+      color: rgb(98,98,98);
+    }
+
+    a,span {
+      color: rgb(152,152,152);
+    }
+    a:hover {
+      color:  rgb(87,87,87);
+    }
+  }
 }
