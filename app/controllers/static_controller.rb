@@ -1,7 +1,6 @@
 class StaticController < ApplicationController
 
   def about
-    session['has_read_about_notice_1'] = true
   end
 
   def contact
@@ -14,7 +13,6 @@ class StaticController < ApplicationController
   end
 
   def prerelease
-    session['has_read_alpha_notice_1'] = true
   end
 
 end

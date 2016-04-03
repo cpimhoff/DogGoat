@@ -59,28 +59,6 @@
   </div>
 <% end %>
 
-<% if session['has_read_about_notice_1'].blank? %>
-  <%= link_to "about", controller: "static", action: "about" do |l| %>
-  <div class="notice_banner">
-    <h1>Welcome to DogGoat!</h1>
-    <p>
-      We'd love to tell you what this site is, why it's here, and how it works.
-    </p>
-  </div>
-  <% end %>
-<% end %>
-
-<% if session['has_read_alpha_notice_1'].blank? %>
-  <%= link_to "prerelease", controller: "static", action: "prerelease" do |l| %>
-  <div class="notice_banner">
-    <h1>DogGoat is in <em>Alpha</em></h1>
-    <p>
-      Important information on DogGoat and its development status.
-    </p>
-  </div>
-  <% end %>
-<% end %>
-
 <div class="main_content">
   <%= yield %>
 </div>
