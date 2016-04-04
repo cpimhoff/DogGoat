@@ -2,23 +2,9 @@
 
   li {
     list-style: none;
-
-    &.action {
-      button {
-        @include button;
-        text-transform: uppercase;
-      }
-    }
-  }
-
-  .action {
-    float: none;
   }
 
   .input {
-    margin-bottom: 0.1em;
-    padding: 0;
-
     .label {
       display: none;
     }

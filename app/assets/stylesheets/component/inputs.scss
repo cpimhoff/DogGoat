@@ -1,7 +1,7 @@
 
 .underlined-input,.underlined-input-light {
   background: transparent;
-  margin-bottom: 0.1em;
+  margin-bottom: 0.5em;
 }
 
 .underlined-input {
@@ -34,4 +34,17 @@
     color: rgb(224,224,224);
     border-bottom-color: white;
   }
+}
+
+.long-input {
+  width: 20em;
+  max-width: 100%;
+}
+.longer-input {
+  width: 25em;
+  max-width: 100%;
+}
+.very-long-input {
+  width: 35em;
+  max-width: 100%;
 }

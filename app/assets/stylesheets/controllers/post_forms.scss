@@ -1,14 +1,13 @@
 
-.form {
+.post-form {
   width: 60vw;
   margin-left: 2em;
 
-  .heading {
-    @include post_heading;
+  .post-heading {
 
     input#post_title {
-      margin-top: 0.5em;
-      @include underlined_input;
+      margin-top: 0.4em;
+      margin-bottom: 0.1em;
       font-size: 300%;
     }
 
@@ -66,8 +65,8 @@
     }
   }
 
-  .button {
-    @include button;
+  .button#edit-button {
+    margin-bottom: 0.2em;
   }
 
 }

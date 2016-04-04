@@ -5,7 +5,7 @@
 # Updates the color of a post heading to a select's value
 update_post_color_to_select = (e) ->
     color = $(this).val()
-    $(".heading").css("border-left-color", color)
+    $(".post-heading").css("border-left-color", color)
 
 # Hookups
 ready = ->

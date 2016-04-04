@@ -1,5 +1,5 @@
-<div class="delete_post">
-  <div class="warning">
+<div class="delete-post">
+  <div class="warning-block">
     Are you sure you would like to delete <strong><%= @post.title %></strong>? This action can not be undone.
   </div>
 
@@ -7,7 +7,7 @@
     <%= semantic_form_for @post, method: :delete do |f| %>
       <div class="options">
         <%= link_to "Cancel", post_path(@post), class: "button"%>
-        <%= f.action :submit, :label => "delete", :as => :button %>
+        <%= f.action :submit, :label => "delete", :as => :button, :button_html => {:class => "destructive-button"} %>
       </div>
     <% end %>
   </div>

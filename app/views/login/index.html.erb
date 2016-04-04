@@ -12,9 +12,9 @@
 <div class="login_form">
   <%= semantic_form_for :credentials do |f| %>
     <h3>Email:</h3>
-    <%= f.input :email, :input_html => {:value => @email} %>
+    <%= f.input :email, :input_html => {value: @email, class: "underlined-input long-input"} %>
     <h3>Password:</h3>
-    <%= f.input :password %>
-    <%= f.action :submit, :as => :button  %>
+    <%= f.input :password, input_html: {class: "long-input"} %>
+    <%= f.action :submit, :as => :button, :button_html => {:class => "button"} %>
   <% end %>
 </div>

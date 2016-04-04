@@ -1,14 +1,17 @@
-<div class="form">
+<div class="post-form">
   <%= semantic_form_for @post do |f| %>
-    <div class="heading" style="border-left-color: <%= @post.color %>">
-      <%= f.input :title %>
-      <div class="author_tag">
+    <div class="post-heading" style="border-left-color: <%= @post.color %>">
+      <%= f.input :title, input_html: {class: "underlined-input"}%>
+      <div class="author-no-link">
         <%= @post.author.full_name %>
       </div>
       <%= f.input :color, :as => :select, :collection => colors_option_hash %>
     </div>
     <%= f.input :raw_content %>
     <div class="hint">Need help with Markdown? <%= link_to "The DogGoat Guide", controller: :static, action: :markdown, :target => "_blank" %>.</div>
-    <%= f.action :submit, :as => :button %>
+    <%= f.action :submit, :as => :button, :button_html => {:class => "button", :id => "edit-button"} %>
+    <% if editing %>
+      <%= link_to "Delete", delete_post_path(@post), class: "destructive-button smaller-button" %>
+    <% end %>
   <% end %>
 </div>

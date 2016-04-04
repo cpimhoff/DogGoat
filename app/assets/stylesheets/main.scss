@@ -10,7 +10,9 @@
 @import "component/menu.scss";
 @import "component/spacing.scss";
 @import "component/index_entries.scss";
+@import "component/buttons.scss";
 @import "component/inputs.scss";
+@import "component/post-headings.scss";
 
 //layout
 @import "layout/header.scss";
@@ -30,3 +32,11 @@
 //mailers
 @import "mailers/layout.scss";
 @import "mailers/welcome.scss";
+
+
+
+//helpful for figuring out how an object is being styled
+.test-debug {
+  background-color: red;
+  color: green;
+}

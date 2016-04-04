@@ -2,7 +2,7 @@
 <h4>You have <%= "#{@member.invites_left} #{"invite".pluralize(@member.invites_left)} to send." %></h4>
 
 <% if @member.invites_left > 0 %>
-  <%= link_to "New Invite", new_invite_path, class: "button new_invite_button" %>
+  <%= link_to "New Invite", new_invite_path, class: "button" %>
 <% end %>
 
 <% @invites.each do |i| %>

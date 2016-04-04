@@ -1,6 +1,6 @@
 
-<div class="post_content">
-  <div class="heading" style="border-left-color: <%=@post.color%>">
+<div class="post-show">
+  <div class="post-heading" style="border-left-color: <%=@post.color%>">
     <div class="title">
       <%= @post.title %>
     </div>
@@ -8,10 +8,10 @@
       <%= link_to @post.author.full_name, member_path(@post.author) %>
     </div>
   </div>
-  <div class="content markdown">
+  <div class="post-content markdown">
     <%= raw(@post.content) %>
   </div>
   <% if @post.author_id == session[:member_id] %>
-    <%= link_to "edit", edit_post_path(@post), class: "button edit_button" %>
+    <%= link_to "edit", edit_post_path(@post), class: "button" %>
   <% end %>
 </div>

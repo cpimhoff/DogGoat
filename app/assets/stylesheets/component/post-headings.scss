@@ -1,0 +1,32 @@
+
+.post-heading {
+  padding-left: 1em;
+  margin-bottom: 2em;
+  border-left: medium solid black;
+  // apply dynamic color with style="border-left-color: [color]"
+  -webkit-transition: border 0.25s;
+  transition: border 0.25s;
+
+  .title {
+    font-size: 300%;
+    @media (max-width: 470px) { //scale down on smaller devices
+      font-size: 200%;
+    }
+  }
+
+  .author,.author-no-link {
+    position: relative;
+    top: -0.2em;
+    left: 0.2em;
+    font-size: 110%;
+    font-weight: bold;
+    font-style: italic;
+    text-transform: lowercase;
+    color: #c1c1c1;
+  }
+  .author {
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}

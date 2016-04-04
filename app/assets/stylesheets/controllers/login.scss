@@ -7,23 +7,8 @@
     border-radius: 0.5em;
     max-width: 45em;
 
-
     margin-top: 2em;
     padding: 3em;
-
-    * {
-      margin-bottom: 1em;
-    }
-
-    input {
-      @include underlined_input;
-      margin-bottom: 1em;
-    }
-
-  .login_button {
-    @include button;
-  }
-
 }
 
 .login_header {

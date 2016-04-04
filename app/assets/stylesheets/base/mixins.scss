@@ -1,61 +1,18 @@
 
 // a globally avaliable scss file for creating CSS helper functions
 
-@mixin post_heading {
-  padding-left: 1em;
-  margin-bottom: 2em;
-  border-left: medium solid black;
-  // apply dynamic color with style="border-left-color: [color]"
-  -webkit-transition: border 0.25s;
-  transition: border 0.25s;
-}
+// @mixin post_heading {
+//   padding-left: 1em;
+//   margin-bottom: 2em;
+//   border-left: medium solid black;
+//   // apply dynamic color with style="border-left-color: [color]"
+//   -webkit-transition: border 0.25s;
+//   transition: border 0.25s;
+// }
 
 @mixin transition_color($duration) {
   -webkit-transition: color $duration;
   transition: color $duration;
-}
-
-@mixin button($color: #e2dede) {
-  padding: 0.5em 1em 0.5em 3em;
-  font-size: 120%;
-  text-align: right;
-  text-transform: uppercase;
-  border: none;
-  background-color: $color;
-  cursor: pointer;
-  -webkit-transition: background-color 0.2s;
-  transition: background-color 0.2s;
-
-  &:hover {
-    background-color: darken($color, 10);
-  }
-}
-
-@mixin warning_block {
-  margin-bottom: 0.5em;
-  padding: 1em;
-  // background-color: rgb(221,221,221);
-  color: rgb(208,0,0);
-  font-style: italic;
-}
-
-@mixin underlined_input {
-  font-size: 100%;
-  background: transparent;
-  color: #787878;
-  border: 0;
-  border-bottom: 2px solid #787878;
-  margin-bottom: 0.1em;
-
-  @include transition_color(0.2s);
-  &:hover {
-    color:  #5b5b5b;
-    border-bottom: 2px solid #5b5b5b;
-  }
-  &:focus {
-    color: black;
-    border-bottom: 2px solid black;
-  }
 }
 
 @mixin color_placeholder_text($color) {

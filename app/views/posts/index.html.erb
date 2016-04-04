@@ -1,1 +1,5 @@
-<%= render 'posts/_posts_list' %>
+<% unless session['member_id'].blank? %>
+  <%= link_to "New Post", new_post_path, class: "button"%>
+<% end %>
+
+<%= render 'posts_list' %>

@@ -12,17 +12,6 @@
     max-width: 45em;
   }
 
-  input {
-    @include underlined_input;
-    margin-bottom: 1em;
-    max-width: 25em;
-  }
-
-  .button {
-    @include button;
-    width: 5em;
-    margin-top: 1em;
-  }
 }
 
 .welcome {
@@ -39,21 +28,10 @@
   margin-top: 2em;
   padding: 3em;
 
-  * {
-    margin-bottom: 1em;
-  }
-
   input#account_claim_code {
-    @include underlined_input;
     text-align: center;
-    // text-transform: uppercase;
     margin-bottom: 1.5em;
   }
-
-  input {
-    margin-bottom: 0.7em;
-  }
-
 }
 
 .member_info_block {
@@ -75,12 +53,6 @@
     font-size: 75%;
     font-style: italic;
     margin-left: 1em;
-  }
-
-  .button {
-    @include button;
-    width: 5em;
-    margin-top: 1em;
   }
 
 }

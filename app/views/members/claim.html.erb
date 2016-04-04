@@ -12,11 +12,11 @@
 <div class="registration">
   <%= semantic_form_for :account, :url => members_path, :method => :post do |f| %>
     <h3>Claim Code:</h3>
-    <%= f.input :claim_code, placeholder: "paste your claim code here", :input_html => {:value => @code} %>
+    <%= f.input :claim_code, placeholder: "paste your claim code here", :input_html => {:value => @code, :class => "underlined-input long-input"} %>
     <h4>Create a password for your account:</h4>
-    <%= f.input :password, placeholder: "password" %>
-    <%= f.input :password_confirmation, placeholder: "confirm the password" %>
+    <%= f.input :password, placeholder: "password", input_html: {class: "long-input"} %>
+    <%= f.input :password_confirmation, placeholder: "confirm the password", input_html: {class: "long-input"} %>
     <br />
-    <%= f.action :submit, :label => "Join", :as => :button %>
+    <%= f.action :submit, :label => "Join", :as => :button, :button_html => {class: "button"} %>
   <% end %>
 </div>

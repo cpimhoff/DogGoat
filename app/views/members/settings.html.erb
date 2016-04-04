@@ -24,6 +24,6 @@
     <%= f.input :password, placeholder: "New Password" %>
     <%= f.input :password_confirmation, placeholder: "Confirm New Password" %>
 
-    <%= f.action :submit, label: "Save", as: :button %>
+    <%= f.action :submit, label: "Save", as: :button, :button_html => {class: "button"} %>
   <% end %>
 </div>
