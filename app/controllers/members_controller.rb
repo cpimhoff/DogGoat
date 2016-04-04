@@ -19,6 +19,7 @@ class MembersController < ApplicationController
   def create
     @code = registration_params['claim_code']
     @code.upcase!
+    @code.strip!
     @invite = Invite.where(:claim_code => @code).first
 
     unless @invite.blank?

@@ -46,8 +46,12 @@
   input#account_claim_code {
     @include underlined_input;
     text-align: center;
-    text-transform: uppercase;
+    // text-transform: uppercase;
     margin-bottom: 1.5em;
+  }
+
+  input {
+    margin-bottom: 0.7em;
   }
 
 }
