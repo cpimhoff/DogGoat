@@ -23,7 +23,10 @@ class Post < ActiveRecord::Base
 
   def self.search(raw_query)
     query = raw_query.sub(" ", "%")
-    return Post.joins(:author).where("title LIKE :query OR members.first_name || ' ' || members.last_name LIKE :query", {:query => "%#{query}%"})
+    query = "%#{query}%"
+    return Post.joins(:author).where{(title =~ query) |
+      ((members.first_name.op('||', ' ').op('||', members.last_name)) =~ query)}
+    # return Post.joins(:author).where("title LIKE :query OR members.first_name || ' ' || members.last_name LIKE :query", {:query => "%#{query}%"})
   end
 
   def content

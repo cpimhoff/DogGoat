@@ -25,6 +25,8 @@ gem 'kaminari'
 gem 'friendly_id', '~> 5.1.0'
 # Admin Portal for CRUDing database
 gem 'rails_admin'
+# Makes ActiveRecord .where calls into Ruby blocks
+gem "squeel"
 
 # Helps manage ENV variables (in LOCAL builds only!)
 gem 'figaro'
@@ -43,9 +45,6 @@ gem 'bcrypt', '~> 3.1.7'
 
 # Use Unicorn as the app server
 # gem 'unicorn'
-
-# Use Capistrano for deployment
-# gem 'capistrano-rails', group: :development
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
