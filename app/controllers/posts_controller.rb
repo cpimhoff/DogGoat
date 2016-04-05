@@ -32,8 +32,10 @@ class PostsController < ApplicationController
   end
 
   def show
-    @post.view_count += 1
-    @post.save
+    unless @post.is_draft
+      @post.view_count += 1
+      @post.save
+    end
   end
 
   # Create
@@ -58,13 +60,15 @@ class PostsController < ApplicationController
       end
 
       if @post.save
-        if @post.is_draft
+        if @post.is_draft?
           flash['msg'] = "Your draft was saved into #{session['member_first_name']}-town."
+          redirect_to member_path(@post.author)
         else
           flash['msg'] = "Your post has been published."
+          redirect_to post_path(@post)
         end
-        redirect_to post_path(@post)
       else
+        @post.is_draft = true
         render 'new'
       end
     end
@@ -77,6 +81,8 @@ class PostsController < ApplicationController
 
   def update
     if enforce_post_ownership
+      already_published = !@post.is_draft
+
       @post.update(post_params)
 
       if (params['button'] == 'save_draft')
@@ -86,10 +92,16 @@ class PostsController < ApplicationController
       end
 
       if @post.save
-        flash['msg'] = "your post has been updated"
-        redirect_to post_path @post
+        if @post.is_draft?
+          flash['msg'] = "Your draft was updated."
+          redirect_to member_path(@post.author)
+        else
+          flash['msg'] = already_published ? "Your post has been updated" : "Your post has been published."
+          redirect_to post_path(@post)
+        end
       else
-        render 'edit'
+        @post.is_draft = true
+        render 'new'
       end
     end
   end

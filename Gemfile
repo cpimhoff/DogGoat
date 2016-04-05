@@ -26,7 +26,7 @@ gem 'friendly_id', '~> 5.1.0'
 # Admin Portal for CRUDing database
 gem 'rails_admin'
 # Makes ActiveRecord .where calls into Ruby blocks
-gem "squeel"
+gem 'squeel'
 
 # Helps manage ENV variables (in LOCAL builds only!)
 gem 'figaro'
