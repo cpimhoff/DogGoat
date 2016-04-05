@@ -8,7 +8,7 @@
       <%= link_to @post.author.full_name, member_path(@post.author) %>
     </div>
   </div>
-  <div class="post-content markdown">
+  <div class="post-content markdown on-load-fade-drop-from-above">
     <%= raw(@post.content) %>
   </div>
   <% if @post.author_id == session[:member_id] %>

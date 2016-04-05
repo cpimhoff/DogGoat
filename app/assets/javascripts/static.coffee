@@ -2,7 +2,7 @@
 # All this logic will automatically be available in application.js.
 # You can use CoffeeScript in this file: http://coffeescript.org/
 
-# Updates the color of a post heading to a select's value
+# switches which content is showing based on mouse-over
 toggle_hidden_children = (e) ->
   vis = $(this).find(":visible")
   hid = $(this).find(":hidden")
