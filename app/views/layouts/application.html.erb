@@ -24,7 +24,7 @@
         <li class="pure-menu-item">
           <%= link_to_unless_current "hot", posts_path(:sort_by => "hot")%></li>
         <li class="pure-menu-item">
-          <%= link_to_unless_current "new", posts_path(:sort_by => "recent")%></li>
+          <%= link_to_unless_current "recent", posts_path(:sort_by => "recent")%></li>
         <li class="pure-menu-item">
           <%= link_to_unless_current "featured", posts_path(:sort_by => "featured")%></li>
         <li class="pure-menu-item">
@@ -40,7 +40,7 @@
             <%= link_to_unless_current "login", controller: "login", action: "index" %></li>
         <% else %>
           <li class="pure-menu-item">
-          <%= link_to_unless_current "contribute", new_post_path%></li>
+          <%= link_to_unless_current "upload", new_post_path%></li>
           <li class="pure-menu-item">
             <%= link_to_unless_current session['member_first_name'], member_path(Member.find(session['member_id'])) %></li>
           <li class="pure-menu-item">

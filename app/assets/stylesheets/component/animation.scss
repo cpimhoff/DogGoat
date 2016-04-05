@@ -7,3 +7,13 @@
   position: relative;
   top: -0.3em;
 }
+
+.on-load-sequence-fade-in-container {
+  //container that contains animation children
+  .animation-child {
+    opacity: 0.0;
+    position: relative;
+    left: -0.2em;
+    //these objects are actually animated on (in order defined by container)
+  }
+}

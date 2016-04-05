@@ -40,7 +40,6 @@ class PostsController < ApplicationController
   def new
     if enforce_membership
       @post = Post.new
-      @post.title = "Untitled Post"
       @post.color = "black"
       @post.author = Member.find(session[:member_id])
     end

@@ -21,6 +21,9 @@
 
 en:
   hello: "Hello World!"
+
+  post_content_placeholder: "Start writing plain text or Markdown here..."
+
   invitation_mailer:
     welcome:
       subject: "You've Been Invited to DogGoat"
