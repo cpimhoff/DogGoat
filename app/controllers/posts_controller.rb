@@ -100,7 +100,9 @@ class PostsController < ApplicationController
           redirect_to post_path(@post)
         end
       else
-        @post.is_draft = true
+        if !already_published
+          @post.is_draft = true
+        end
         render 'new'
       end
     end
