@@ -5,8 +5,9 @@
   <h2> since <%= @member.created_at.to_s :month_year %> </h2>
 
   <% if @member.id == session[:member_id] %>
-    <%= link_to "Settings", edit_member_path(@member), class: "button settings_button" %>
+    <%= link_to "New Post", new_post_path, class: "button" %>
     <%= link_to "Invites (#{@member.invites_left} left)", invites_path, class: "button invites_button" %>
+    <%= link_to "Settings", edit_member_path(@member), class: "button settings_button" %>
   <% end %>
 </div>
 

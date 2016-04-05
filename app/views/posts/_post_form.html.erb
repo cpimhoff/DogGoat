@@ -6,11 +6,22 @@
         <%= @post.author.full_name %>
       </div>
       <%= f.input :color, :as => :select, :collection => colors_option_hash %>
+      <% if @post.is_draft && !@post.updated_at.blank? %>
+        <div class="draft-notice">DRAFT - <%= @post.updated_at.to_s :short_ordinalized %></div>
+      <% end %>
     </div>
     <%= f.input :raw_content, placeholder: t(:post_content_placeholder) %>
     <div class="hint">Need help with Markdown? <%= link_to "The DogGoat Guide", controller: :static, action: :markdown, :target => "_blank" %>.</div>
-    <%= f.action :submit, :as => :button, :button_html => {:class => "button", :id => "edit-button"} %>
-    <% if editing %>
+
+    <!-- Primary Submit -->
+    <%= f.action :submit, :as => :button, label: "Publish", :button_html => {:class => "button", :id => "edit-button", :value => "post"} %>
+
+    <% if @post.is_draft %>
+      <!-- Draft Submit -->
+      <%= f.action :submit, as: :button, label: "Save as Draft" , :button_html => {:class => "button", :id => "edit-button", :value => "save_draft"} %>
+    <% end %>
+
+    <% unless is_new %>
       <%= link_to "Delete", delete_post_path(@post), class: "destructive-button smaller-button" %>
     <% end %>
   <% end %>

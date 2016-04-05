@@ -8,6 +8,9 @@
         <span class="author">
           <%= link_to "by #{p.author.full_name}", member_path(p.author) %>
         </span>
+        <% if p.is_draft %>
+          <div class="draft-notice">DRAFT - <%= p.updated_at.to_s :short_ordinalized %></div>
+        <% end %>
       </span>
     </div>
   <%end%>

@@ -9,6 +9,9 @@
     </div>
   </div>
   <div class="post-content markdown on-load-fade-drop-from-above">
+    <% if @post.is_draft %>
+      <div class="draft-notice">DRAFT - <%= @post.updated_at.to_s :short_ordinalized %></div>
+    <% end %>
     <%= raw(@post.content) %>
   </div>
   <% if @post.author_id == session[:member_id] %>

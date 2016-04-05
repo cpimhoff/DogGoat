@@ -40,9 +40,9 @@
             <%= link_to_unless_current "login", controller: "login", action: "index" %></li>
         <% else %>
           <li class="pure-menu-item">
-          <%= link_to_unless_current "upload", new_post_path%></li>
+          <%= link_to_unless_current "new", new_post_path%></li>
           <li class="pure-menu-item">
-            <%= link_to_unless_current session['member_first_name'], member_path(Member.find(session['member_id'])) %></li>
+            <%= link_to_unless_current "#{session['member_first_name'].downcase}-town", member_path(Member.find(session['member_id'])) %></li>
           <li class="pure-menu-item">
             <%= link_to_unless_current "logout", controller: "login", action: "logout" %></li>
         <% end %>

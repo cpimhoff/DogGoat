@@ -3,7 +3,13 @@ class MembersController < ApplicationController
   before_action :get_member_from_id, :except => ['new', 'create']
 
   def show
-    @posts = @member.posts.visible.page params[:page]
+    if @member.id == session['member_id']
+      # show drafts and published posts
+      @posts = @member.posts.drafts_first.by_recent.page params[:page]
+    else
+      # show published posts
+      @posts = @member.posts.by_recent.visible.page params[:page]
+    end
   end
 
   def new

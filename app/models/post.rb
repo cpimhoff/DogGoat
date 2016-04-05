@@ -11,11 +11,15 @@ class Post < ActiveRecord::Base
 
   paginates_per 4
 
-  scope :by_recent, -> {order('created_at DESC').visible}
-  scope :by_hot, -> {order('view_count DESC').visible}
-  scope :by_cold, -> {order('view_count ASC').visible}
-  scope :featured, -> {where('featured'=> true).visible}
-  scope :visible, -> {where('hidden'=> false)}
+  scope :by_recent, -> {order('created_at DESC')}
+  scope :by_hot, -> {order('view_count DESC')}
+  scope :by_cold, -> {order('view_count ASC')}
+  scope :featured, -> {where(featured: true)}
+
+  scope :drafts_first, -> {order('is_draft DESC')}
+
+  scope :visible, -> {where(hidden: false).published}
+  scope :published, -> {where(is_draft: false)}
 
   def self.search(raw_query)
     query = raw_query.sub(" ", "%")
