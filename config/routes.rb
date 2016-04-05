@@ -29,6 +29,7 @@ Rails.application.routes.draw do
   get 'policy' => 'static#policy'
   get 'markdown' => 'static#markdown'
   get 'prerelease' => 'static#prerelease'
+  get 'changelog' => 'static#changelog'
 
   # Routes for the admin zone
   mount RailsAdmin::Engine => '/admin_zone', as: 'rails_admin'

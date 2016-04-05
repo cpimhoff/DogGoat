@@ -15,4 +15,7 @@ class StaticController < ApplicationController
   def prerelease
   end
 
+  def changelog
+  end
+
 end
