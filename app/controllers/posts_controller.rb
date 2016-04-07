@@ -135,6 +135,7 @@ class PostsController < ApplicationController
   def downvote
     @post.vote_score -= 1
     @post.save
+    @post = get_post_from_id
     if request.xhr?
       render json: { vote_score: @post.vote_score, post_id: @post.id }
     else

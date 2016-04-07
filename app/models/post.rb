@@ -6,7 +6,8 @@ class Post < ActiveRecord::Base
   validates_presence_of :title, message: "Please give your post a catchy title."
   validates_length_of :title, maximum: 35, message: "This title is too long."
   validates_presence_of :author_id, message: "Posts must have an authoring member."
-  validates_numericality_of :view_count
+  validates_numericality_of :view_count, greater_than_or_equal_to: 0, only_integer: true
+  validates_numericality_of :vote_score, greater_than_or_equal_to: 0, only_integer: true, message: "Posts can't have a negative score."
 
   # posting validations
   validates_presence_of :color, message: "Posts have to have a color value. It makes the site more approachable.", unless: :is_draft
