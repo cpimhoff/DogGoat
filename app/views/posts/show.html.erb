@@ -19,11 +19,11 @@
     <%= link_to "edit", edit_post_path(@post), class: "button" %>
   <% end %>
 
-  <div class="vote-score">
+  <div class="score">
     <!-- <div class="triangle-up-button"></div> -->
     <%= link_to "", upvote_post_path(@post), class: 'triangle-up-button vote-action', method: :put, remote: true %>
     <div class="label">
-      <span class="vote-score-value"><%= @post.vote_score %></span>
+      <span class="score-value"><%= @post.score %></span>
       <h4>current score</h4>
     </div>
     <%= link_to "", downvote_post_path(@post), class: 'triangle-down-button vote-action', method: :put, remote: true %>

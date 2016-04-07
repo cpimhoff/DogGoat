@@ -123,21 +123,21 @@ class PostsController < ApplicationController
 
   # Upvote and Downvote
   def upvote
-    @post.vote_score += 1
+    @post.score += 1
     @post.save
     if request.xhr?
-      render json: { vote_score: @post.vote_score, post_id: @post.id }
+      render json: { score: @post.score, post_id: @post.id }
     else
       redirect_to post_path @post
   end
   end
 
   def downvote
-    @post.vote_score -= 1
+    @post.score -= 1
     @post.save
     @post = get_post_from_id
     if request.xhr?
-      render json: { vote_score: @post.vote_score, post_id: @post.id }
+      render json: { score: @post.score, post_id: @post.id }
     else
       redirect_to post_path @post
   end

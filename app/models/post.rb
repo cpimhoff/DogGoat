@@ -7,7 +7,7 @@ class Post < ActiveRecord::Base
   validates_length_of :title, maximum: 35, message: "This title is too long."
   validates_presence_of :author_id, message: "Posts must have an authoring member."
   validates_numericality_of :view_count, greater_than_or_equal_to: 0, only_integer: true
-  validates_numericality_of :vote_score, greater_than_or_equal_to: 0, only_integer: true, message: "Posts can't have a negative score."
+  validates_numericality_of :score, greater_than_or_equal_to: 0, only_integer: true, message: "Posts can't have a negative score."
 
   # posting validations
   validates_presence_of :color, message: "Posts have to have a color value. It makes the site more approachable.", unless: :is_draft
@@ -17,7 +17,7 @@ class Post < ActiveRecord::Base
 
   scope :by_recent, -> {order('created_at DESC')}
   scope :by_hot, -> {order('view_count DESC')}
-  scope :by_score, -> {order('vote_score DESC')}
+  scope :by_score, -> {order('score DESC')}
   scope :by_cold, -> {order('view_count ASC')}
   scope :featured, -> {where(featured: true)}
 

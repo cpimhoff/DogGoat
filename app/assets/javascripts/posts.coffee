@@ -7,9 +7,9 @@ update_post_color_to_select = (e) ->
     color = $(this).val()
     $(".post-heading").css("border-left-color", color)
 
-# Updates the value of a vote-score display after an AJAX request (from an AJAX result)
-update_vote_score_display_from_ajax = (status,data,xhr)->
-  $(".vote-score-value").text data.vote_score
+# Updates the value of a score display after an AJAX request (from an AJAX result)
+update_score_display_from_ajax = (status,data,xhr)->
+  $(".score-value").text data.score
 
 # Hookups
 ready = ->
@@ -19,4 +19,4 @@ ready = ->
 $(document).ready(ready)
 $(document).on('page:load',ready)
 
-$(document).on 'ajax:success', 'a.vote-action', update_vote_score_display_from_ajax
+$(document).on 'ajax:success', 'a.vote-action', update_score_display_from_ajax
