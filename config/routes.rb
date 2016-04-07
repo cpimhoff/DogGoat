@@ -10,6 +10,10 @@ Rails.application.routes.draw do
       get 'search'
     end
     member do
+      # recivers for AJAX events:
+      put 'upvote'
+      put 'downvote'
+      # additional pages:
       get 'delete'  #delete form not default
     end
   end

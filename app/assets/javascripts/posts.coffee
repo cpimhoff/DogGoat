@@ -7,6 +7,10 @@ update_post_color_to_select = (e) ->
     color = $(this).val()
     $(".post-heading").css("border-left-color", color)
 
+# Updates the value of a vote-score display after an AJAX request (from an AJAX result)
+update_vote_score_display_from_ajax = (status,data,xhr)->
+  $(".vote-score-value").text data.vote_score
+
 # Hookups
 ready = ->
   $("select#post_color").on('mouseenter','option',update_post_color_to_select)
@@ -14,3 +18,5 @@ ready = ->
 
 $(document).ready(ready)
 $(document).on('page:load',ready)
+
+$(document).on 'ajax:success', 'a.vote-action', update_vote_score_display_from_ajax
