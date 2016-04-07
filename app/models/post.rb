@@ -17,6 +17,7 @@ class Post < ActiveRecord::Base
 
   scope :by_recent, -> {order('created_at DESC')}
   scope :by_hot, -> {order('view_count DESC')}
+  scope :by_score, -> {order('vote_score DESC')}
   scope :by_cold, -> {order('view_count ASC')}
   scope :featured, -> {where(featured: true)}
 

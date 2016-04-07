@@ -10,7 +10,7 @@ class PostsController < ApplicationController
     unless sort_type.blank?
       case sort_type.downcase
       when "hot"
-        selected_sort = Post.by_hot
+        selected_sort = Post.by_score
       when "cold"
         selected_sort = Post.by_cold
       when "recent"
