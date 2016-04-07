@@ -14,7 +14,17 @@
     <% end %>
     <%= raw(@post.content) %>
   </div>
+
   <% if @post.author_id == session[:member_id] %>
     <%= link_to "edit", edit_post_path(@post), class: "button" %>
   <% end %>
+
+  <div class="vote-score">
+    <div class="triangle-up-button"></div>
+    <div class="label">
+      <span class="value"><%= @post.vote_score %></span>
+      <h4>current score</h4>
+    </div>
+    <div class="triangle-down-button"></div>
+  </div>
 </div>

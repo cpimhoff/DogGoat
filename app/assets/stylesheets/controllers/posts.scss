@@ -21,6 +21,40 @@
     }
   }
 
+  .vote-score {
+    margin-top: 2em;
+    padding-left: 3em;
+
+    .label {
+      position: relative;
+      top: -0.2em;
+      h4 {
+        @include unselectable;
+        z-index: -1;
+
+        font-size: 200%;
+        opacity: 0.1;
+      }
+
+      .value {
+        @include unselectable;
+        z-index: -1;
+
+        font-size: 400%;
+        font-style: italic;
+        opacity: 0.4;
+        position: absolute;
+        margin-left: 0.2em;
+      }
+    }
+
+    .vote-buttons {
+      * {
+        margin-bottom: 10px;
+      }
+    }
+  }
+
 }
 
 .posts-list {

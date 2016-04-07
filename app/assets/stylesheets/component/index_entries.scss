@@ -4,18 +4,21 @@
   @media (max-width: 470px) { //scale margins on smaller devices
     margin-bottom: 0.5em;
   }
+
   display:flex;
 
     .post_details {
-    padding: 1em;
-    background-color: #e9e6e6;
-    border-left: medium solid black; //will be recolored
-    border-top-right-radius: 0.1em;
-    border-bottom-right-radius: 0.1em;
-    border-right-style: solid;
-    border-right-color: darken(#e9e6e6, 1);
+      z-index: 0;
+      padding: 1em;
+      background-color: #e9e6e6;
+      border-left: medium solid black; //will be recolored
+      border-top-right-radius: 0.1em;
+      border-bottom-right-radius: 0.1em;
+      border-right-style: solid;
+      border-right-color: darken(#e9e6e6, 1);
 
     .title {
+      z-index: 1;
       font-size: 300%;
       @media (max-width: 470px) { //scale down on smaller devices
         font-size: 200%;
@@ -28,6 +31,7 @@
     }
 
     .author {
+      z-index: 1;
       font-style: italic;
       text-transform: lowercase;
       color: #817e7e;
@@ -37,7 +41,24 @@
       }
     }
 
+    .vote-score {
+      z-index: -1;
+      color: black;
+      font-size: 600%;
+      @media (max-width: 470px) { //scale down on smaller devices
+        font-size: 500%;
+      }
+      font-style: italic;
+      position: absolute;
+      top: -0.1em;
+      left: 0.1em;
+      opacity: 0.06;
+
+      @include unselectable;
+    }
+
     .draft-notice {
+      z-index: 1;
       padding: 0em;
       float: right;
     }

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160405022231) do
+ActiveRecord::Schema.define(version: 20160407050055) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -66,6 +66,7 @@ ActiveRecord::Schema.define(version: 20160405022231) do
     t.boolean  "featured",    default: false, null: false
     t.string   "slug"
     t.boolean  "is_draft",    default: false
+    t.integer  "vote_score",  default: 0
   end
 
   add_index "posts", ["slug"], name: "index_posts_on_slug", unique: true, using: :btree

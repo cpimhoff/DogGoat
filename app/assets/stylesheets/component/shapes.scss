@@ -1,0 +1,42 @@
+
+@mixin triangle-up($color: #999999) {
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 0 25px 43.3px 25px; //equilateral, 50px
+  border-color: transparent transparent $color transparent;
+  border-radius: 0.2em;
+}
+
+@mixin triangle-down($color: #999999) {
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 43.3px 25px 0 25px; //equilateral, 50px
+  border-color: $color transparent transparent transparent;
+  border-radius: 0.2em;
+}
+
+.triangle-up-button {
+  @include triangle-up(#878787);
+  opacity: 0.4;
+
+  transition: opacity 0.2s;
+  -webkit-transition: opacity 0.2s;
+
+  &:hover {
+    opacity: 0.8;
+  }
+}
+
+.triangle-down-button {
+  @include triangle-down(#878787);
+  opacity: 0.4;
+
+  transition: opacity 0.2s;
+  -webkit-transition: opacity 0.2s;
+
+  &:hover {
+    opacity: 0.8;
+  }
+}

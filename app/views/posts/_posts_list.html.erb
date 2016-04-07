@@ -2,6 +2,9 @@
   <% @posts.each do |p| %>
     <div class="post-index-preview animation-child">
       <span class="post_details" style="border-left-color: <%=p.color%>">
+        <span class="vote-score">
+          <%= p.vote_score %>
+        </span>
         <span class="title">
           <%= link_to p.title, post_path(p) %>
         </span>
