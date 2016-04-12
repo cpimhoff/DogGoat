@@ -8,6 +8,10 @@ class Prompt < ActiveRecord::Base
 
   validates_length_of :text, maximum: 150, message: "Prompts should be short and snappy."
 
+  paginates_per 6
+
+  scope :by_recent, -> {order('created_at DESC')}
+
   include FriendlyId
   friendly_id :slug_candidates, :use => :slugged
   def slug_candidates

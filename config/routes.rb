@@ -18,6 +18,16 @@ Rails.application.routes.draw do
     end
   end
 
+  resources :prompts do
+    member do
+      # recivers for AJAX events:
+      put 'add_riff'
+      put 'vote'
+      # additional pages:
+      get 'delete'  #delete form not default
+    end
+  end
+
   resources :members, except: [:index, :destroy], path_names: { new: "claim", edit: "settings"}
 
   resources :invites, except: [:show]
