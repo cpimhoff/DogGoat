@@ -16,16 +16,18 @@
   <% end %>
 
 
-  <% @prompt.riffs.each do |r| %>
-    <div class="riff-show">
-      <div class="riff-content">
-        <%= r.content %>
+  <div class="on-load-sequence-fade-in-container">
+    <% @prompt.riffs.each do |r| %>
+      <div class="riff-show animation-child">
+        <div class="riff-content">
+          <%= r.content %>
+        </div>
+        <div class="riff-author">
+          <%= r.author.full_name %>
+        </div>
       </div>
-      <div class="riff-author">
-        <%= r.author.full_name %>
-      </div>
-    </div>
-  <% end %>
+    <% end %>
+  </div>
 
   <% if @prompt.is_open %>
     <div class="riff-form">
