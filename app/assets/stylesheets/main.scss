@@ -26,10 +26,13 @@
 //controllers
 @import "controllers/posts.scss";
 @import "controllers/post_forms.scss";
+@import "controllers/prompts.scss";
+@import "controllers/prompt_forms.scss";
 @import "controllers/login.scss";
 @import "controllers/members.scss";
 @import "controllers/invites.scss";
 @import "controllers/static.scss";
+
 
 //mailers
 @import "mailers/layout.scss";

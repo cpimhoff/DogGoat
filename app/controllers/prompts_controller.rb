@@ -28,20 +28,34 @@ class PromptsController < ApplicationController
 
   # form for new prompt
   def new
-
+    @prompt = Prompt.new
+    @prompt.author_id = session[:member_id]
   end
 
   def create
+    @prompt = Prompt.new(prompt_params)
+    @prompt.author_id = session[:member_id]
 
+    if @prompt.save
+      flash['msg'] = "Your prompt has been posted"
+      redirect_to prompt_path(@prompt)
+    else
+      render 'new'
+    end
   end
 
   # form for editing
   def edit
-
   end
 
   def update
-
+    @prompt.update(prompt_params)
+    if @prompt.save
+      flash['msg'] = "Your prompt has been updated"
+      redirect_to prompt_path(@prompt)
+    else
+      render 'edit'
+    end
   end
 
   # form for delete
@@ -57,6 +71,10 @@ class PromptsController < ApplicationController
 
     def get_prompt_from_id
       @prompt = Prompt.friendly.find(params[:id])
+    end
+
+    def prompt_params
+      params.require('prompt').permit('title','color','text')
     end
 
     def enforce_membership

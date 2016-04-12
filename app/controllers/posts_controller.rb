@@ -103,7 +103,7 @@ class PostsController < ApplicationController
         if !already_published
           @post.is_draft = true
         end
-        render 'new'
+        render 'edit'
       end
     end
   end

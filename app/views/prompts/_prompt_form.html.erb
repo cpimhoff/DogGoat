@@ -1,0 +1,19 @@
+<div class="prompt-form">
+  <%= semantic_form_for @prompt do |f| %>
+    <div class="prompt-heading" style="border-left-color: <%= @prompt.color %>">
+      <%= f.input :title, placeholder: "Untitled Prompt", input_html: {class: "underlined-input"}%>
+      <div class="author-no-link">
+        <%= @prompt.author.full_name %>
+      </div>
+      <%= f.input :color, :as => :select, :collection => colors_option_hash %>
+    </div>
+    <%= f.input :text, placeholder: "set the community up for a riff" %>
+
+    <!-- Primary Submit -->
+    <%= f.action :submit, :as => :button, label: "Publish", :button_html => {:class => "button", :value => "post"} %>
+
+    <% unless is_new %>
+      <%= link_to "Delete", delete_post_path(@post), class: "destructive-button smaller-button" %>
+    <% end %>
+  <% end %>
+</div>

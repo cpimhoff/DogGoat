@@ -3,7 +3,7 @@
     <div class="prompt-index-preview animation-child">
       <span class="prompt_details" style="border-left-color: <%=p.color%>">
         <span class="title">
-          <%= link_to p.title, post_path(p) %>
+          <%= link_to p.title, prompt_path(p) %>
         </span>
         <span class="author">
           <%= link_to "from #{p.author.full_name}", member_path(p.author) %>
