@@ -16,7 +16,7 @@
   <% end %>
 
 
-  <div class="on-load-sequence-fade-in-container">
+  <div class="riff-list on-load-sequence-fade-in-container">
     <% @prompt.riffs.each do |r| %>
       <div class="riff-show animation-child">
         <div class="riff-content">
@@ -33,7 +33,7 @@
     <div class="riff-form">
       <%= semantic_form_for :riff, remote: true, method: :put, url: add_riff_prompt_path(@prompt) do |f| %>
         <%= f.input :content, :as => :text, :input_html => {:placeholder => "make a riff"} %>
-        <%= f.action :submit, :as => :button, label: "Submit", :button_html => {:class => "button smaller-button", :value => "post-riff"} %>
+        <%= f.action :submit, :as => :button, label: "Submit", :button_html => {:class => "button smaller-button new-riff", :value => "post-riff"} %>
       <% end %>
     </div>
   <% end %>

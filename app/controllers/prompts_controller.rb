@@ -25,7 +25,7 @@ class PromptsController < ApplicationController
     riff.save
 
     if request.xhr?
-      render json: { new_riff_text: riff.text, new_riff_auhor: riff.author.full_name, prompt_id: @prompt.id }
+      render json: { new_riff_content: riff.content, new_riff_author: riff.author.full_name, prompt_id: @prompt.id }
     else
       redirect_to prompts_path(@prompt)
     end

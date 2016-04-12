@@ -7,6 +7,18 @@ update_prompt_color_to_select = (e) ->
     color = $(this).val()
     $(".prompt-heading").css("border-left-color", color)
 
+# Updates the value of a score display after an AJAX request (from an AJAX result)
+on_recieve_new_riff = (status,data,xhr)->
+  $("#riff_content").val('')
+  $(".riff-list").append("<div class='riff-show'>
+    <div class='riff-content'>
+      #{data.new_riff_content}
+    </div>
+    <div class='riff-author'>
+      #{data.new_riff_author}
+    </div>
+  </div>")
+
 # Hookups
 ready = ->
   $("select#prompt_color").on('mouseenter','option',update_prompt_color_to_select)
@@ -14,3 +26,5 @@ ready = ->
 
 $(document).ready(ready)
 $(document).on('page:load',ready)
+
+$(document).on 'ajax:success', on_recieve_new_riff
