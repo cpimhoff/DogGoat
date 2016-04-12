@@ -2,4 +2,45 @@
 .prompt-show {
   margin-bottom: 4em;
   max-width: 55em;
+
+  .riff-show {
+  margin-left: 1em;
+  margin-bottom: 1em;
+
+    .riff-content {
+      font-size: 120%;
+      margin-bottom: 0.1em;
+    }
+
+    .riff-author {
+      color: rgb(207,207,207);
+    }
+  }
+
+  .riff-form {
+    width: 50vw;
+    textarea#riff_content {
+      min-width: 30em;
+      max-width: 60vw;
+      height: 5vh;
+      max-height: 10vh;
+
+      background-color: rgb(241,236,236);
+      border: none;
+
+      padding: 1em;
+      margin-bottom: 0em;
+
+      font-size: 110%;
+      line-height: 120%;
+
+      &::selection {
+        background-color: rgb(219,219,219);
+      }
+    }
+    button {
+      margin-top: 0em;
+    }
+  }
+
 }

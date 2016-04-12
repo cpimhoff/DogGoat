@@ -19,7 +19,16 @@ class PromptsController < ApplicationController
 
   # receivers for riffs and votes
   def add_riff
+    riff = Riff.new(riff_params)
+    riff.author_id = session[:member_id]
+    riff.prompt = @prompt
+    riff.save
 
+    if request.xhr?
+      render json: { new_riff_text: riff.text, new_riff_auhor: riff.author.full_name, prompt_id: @prompt.id }
+    else
+      redirect_to prompts_path(@prompt)
+    end
   end
 
   def vote
@@ -75,6 +84,14 @@ class PromptsController < ApplicationController
     end
 
     def prompt_params
+      params.require('prompt').permit('title','color','text')
+    end
+
+    def riff_params
+      params.require('riff').permit('content')
+    end
+
+    def vote_params
       params.require('prompt').permit('title','color','text')
     end
 

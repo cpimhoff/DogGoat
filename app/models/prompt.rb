@@ -12,6 +12,11 @@ class Prompt < ActiveRecord::Base
 
   scope :by_recent, -> {order('created_at DESC')}
 
+  # TODO: implement this
+  def is_open
+    return true
+  end
+
   include FriendlyId
   friendly_id :slug_candidates, :use => :slugged
   def slug_candidates
