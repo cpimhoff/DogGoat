@@ -6,14 +6,14 @@
         <%= @prompt.author.full_name %>
       </div>
       <%= f.input :color, :as => :select, :collection => colors_option_hash %>
+      <%= f.input :text, placeholder: "set the community up for a riff" %>
     </div>
-    <%= f.input :text, placeholder: "set the community up for a riff" %>
 
     <!-- Primary Submit -->
     <%= f.action :submit, :as => :button, label: "Publish", :button_html => {:class => "button", :value => "post"} %>
 
     <% unless is_new %>
-      <%= link_to "Delete", delete_post_path(@post), class: "destructive-button smaller-button" %>
+      <%= link_to "Delete", delete_prompt_path(@prompt), class: "destructive-button smaller-button" %>
     <% end %>
   <% end %>
 </div>

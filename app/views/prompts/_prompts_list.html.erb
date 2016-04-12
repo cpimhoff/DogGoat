@@ -2,8 +2,8 @@
   <% @prompts.each do |p| %>
     <div class="prompt-index-preview animation-child">
       <span class="prompt_details" style="border-left-color: <%=p.color%>">
-        <span class="title">
-          <%= link_to p.title, prompt_path(p) %>
+        <span class="prompt-text">
+          <%= link_to p.text, prompt_path(p) %>
         </span>
         <span class="author">
           <%= link_to "from #{p.author.full_name}", member_path(p.author) %>

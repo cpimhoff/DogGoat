@@ -1,14 +1,17 @@
 
 .prompt-form {
+
   width: 60vw;
   margin-left: 2em;
 
-  .post-heading {
+  .prompt-heading {
+    margin-bottom: 0.5em;
 
     input#prompt_title {
-      margin-top: 0.4em;
-      margin-bottom: 0.1em;
-      font-size: 300%;
+      font-size: 150%;
+      @media (max-width: 470px) { //scale down on smaller devices
+        font-size: 130%;
+      }
     }
 
     .author_tag {
@@ -26,25 +29,25 @@
       width: 8em;
       margin-bottom: 1em;
     }
-  }
 
-  textarea#prompt_text {
-    min-width: 30em;
-    max-width: 60vw;
-    height: 5vh;
-    max-height: 10vh;
+    textarea#prompt_text {
+      min-width: 30em;
+      max-width: 60vw;
+      height: 5vh;
+      max-height: 10vh;
 
-    background-color: rgb(241,236,236);
-    border: none;
+      background-color: rgb(241,236,236);
+      border: none;
 
-    padding: 1em;
-    margin-bottom: 0.2em;
+      padding: 1em;
+      margin-bottom: 0.2em;
 
-    font-size: 110%;
-    line-height: 120%;
+      font-size: 110%;
+      line-height: 120%;
 
-    &::selection {
-      background-color: rgb(219,219,219);
+      &::selection {
+        background-color: rgb(219,219,219);
+      }
     }
   }
 

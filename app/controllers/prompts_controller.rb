@@ -60,11 +60,12 @@ class PromptsController < ApplicationController
 
   # form for delete
   def delete
-
   end
 
   def destroy
-
+    flash['msg'] = "Goodbye forever #{@prompt.title}! We hated you anyway."
+    @prompt.destroy
+    redirect_to prompts_path
   end
 
   private

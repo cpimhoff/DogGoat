@@ -42,7 +42,7 @@
 
   display:flex;
 
-    .post_details {
+    .post_details,.prompt_details {
       z-index: 0;
       padding: 1em;
       background-color: #e9e6e6;
@@ -57,6 +57,19 @@
       font-size: 300%;
       @media (max-width: 470px) { //scale down on smaller devices
         font-size: 200%;
+      }
+      color: #424141;
+      @include transition_color(0.15s);
+      &:hover {
+        color: rgb(0,0,0);
+      }
+    }
+
+    .prompt-text {
+      z-index: 1;
+      font-size: 150%;
+      @media (max-width: 470px) { //scale down on smaller devices
+        font-size: 110%;
       }
       color: #424141;
       @include transition_color(0.15s);

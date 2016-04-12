@@ -6,9 +6,9 @@
     <div class="author">
       <%= link_to @prompt.author.full_name, member_path(@prompt.author) %>
     </div>
-  </div>
-  <div class="prompt-text on-load-fade-drop-from-above">
-    <%= @prompt.text %>
+    <div class="prompt-text on-load-fade-drop-from-above">
+      <%= @prompt.text %>
+    </div>
   </div>
 
   <% if @prompt.author_id == session[:member_id] %>

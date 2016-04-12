@@ -1,24 +1,18 @@
 
 .post-heading,.prompt-heading {
   padding-left: 1em;
-  margin-bottom: 2em;
   border-left: medium solid black;
   // apply dynamic color with style="border-left-color: [color]"
   -webkit-transition: border 0.25s;
   transition: border 0.25s;
 
   .title {
-    font-size: 300%;
-    @media (max-width: 470px) { //scale down on smaller devices
-      font-size: 200%;
-    }
   }
 
   .author,.author-no-link {
     position: relative;
     top: -0.2em;
     left: 0.2em;
-    font-size: 110%;
     font-weight: bold;
     font-style: italic;
     text-transform: lowercase;
@@ -29,6 +23,14 @@
       text-decoration: underline;
     }
   }
+
+  .prompt-text {
+    margin-top: 0.2em;
+    font-size: 300%;
+    @media (max-width: 470px) { //scale down on smaller devices
+      font-size: 220%;
+    }
+  }
 }
 
 .draft-notice {
@@ -36,4 +38,30 @@
   font-weight: bold;
   font-size: 130%;
   padding-bottom: 1em;
+}
+
+.post-heading {
+  margin-bottom: 2em;
+  .title {
+    font-size: 300%;
+    @media (max-width: 470px) { //scale down on smaller devices
+      font-size: 200%;
+    }
+  }
+  .author {
+    font-size: 110%;
+  }
+}
+
+.prompt-heading {
+  margin-bottom: 0.5em;
+  .title {
+    font-size: 150%;
+    @media (max-width: 470px) { //scale down on smaller devices
+      font-size: 130%;
+    }
+  }
+  .author {
+    font-size: 80%;
+  }
 }
