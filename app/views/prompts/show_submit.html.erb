@@ -1,0 +1,28 @@
+<div class="prompt-show">
+  <div class="prompt-heading" style="border-left-color: <%=@prompt.color%>">
+    <div class="title">
+      <%= @prompt.title %>
+    </div>
+    <div class="author">
+      <%= link_to @prompt.author.full_name, member_path(@prompt.author) %>
+    </div>
+    <div class="prompt-text">
+      <%= @prompt.text %>
+    </div>
+  </div>
+
+  <% if @prompt.author_id == session[:member_id] %>
+    <%= link_to "edit", edit_prompt_path(@prompt), class: "button" %>
+  <% end %>
+
+  <div class="riff-state-label">
+    Submit
+  </div>
+  <div class="riff-form">
+    <%= semantic_form_for :riff, method: :put, url: add_riff_prompt_path(@prompt) do |f| %>
+      <%= f.input :content, :as => :text, :input_html => {:placeholder => "make a riff"} %>
+      <%= f.action :submit, :as => :button, label: "Submit", :button_html => {:class => "new-riff button smaller-button", :value => "post-riff"} %>
+    <% end %>
+  </div>
+
+</div>

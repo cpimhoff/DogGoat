@@ -11,22 +11,21 @@
     </div>
   </div>
 
+  <% if @prompt.author_id == session[:member_id] %>
+    <%= link_to "edit", edit_prompt_path(@prompt), class: "button" %>
+  <% end %>
+
+
   <div class="riff-state-label">
-    Results
+    Vote
   </div>
-  <div class="riff-list on-load-sequence-fade-in-container">
-    <% rank = 1 %>
-    <% @winners.each do |r| %>
+  <div class="vote-riff-list on-load-sequence-fade-in-container">
+    <% @ballot.each do |r| %>
       <div class="riff-show animation-child">
-        <span class="rank-number"><%= rank %></span>
-        <span class="riff-content">
-          <%= r.content %>
-        </span>
-        <div class="riff-author">
-          <%= r.author.full_name %>
+        <div class="riff-content">
+          <%= link_to r.content, vote_prompt_path(@prompt, vote: {:riff_id => r.id}), method: :put, class: "vote-for" %>
         </div>
       </div>
-      <% rank+=1 %>
     <% end %>
   </div>
 

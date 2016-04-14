@@ -15,14 +15,17 @@ class PromptsController < ApplicationController
   # b) the prompt, and the top responses
   def show
     if @prompt.is_open && !session[:member_id].blank?
+      # if the prompt is open and a member is logged in...
       if @prompt.has_member_contributed(session[:member_id])
         # member is eligable to vote
         @ballot = @prompt.voting_selection
+        render 'show_vote'
       else
-        @ballot = false
+        # member should contribute
+        render 'show_submit'
       end
-      render 'show_open'
     else
+      # display current frontrunners
       @winners = @prompt.riffs.limit(3).by_vote
       render 'show_results'
     end
@@ -38,7 +41,11 @@ class PromptsController < ApplicationController
     riff = Riff.new(riff_params)
     riff.author_id = session[:member_id]
     riff.prompt = @prompt
-    riff.save
+    if riff.save
+      flash['msg'] = "Your riff was submitted"
+    else
+      flash['msg'] = "Something prevented your riff from being submitted"
+    end
 
     redirect_to prompt_path(@prompt)
   end
