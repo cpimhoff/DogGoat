@@ -9,28 +9,28 @@
   .prompt-heading {
     margin-bottom: 0.5em;
 
-    input#prompt_title {
-      font-size: 150%;
-      @media (max-width: 470px) { //scale down on smaller devices
-        font-size: 130%;
+      input#prompt_title {
+        font-size: 150%;
+        @media (max-width: 470px) { //scale down on smaller devices
+          font-size: 130%;
+        }
       }
-    }
 
-    .author_tag {
-      position: relative;
-      font-size: 110%;
-      font-weight: bold;
-      font-style: italic;
-      text-transform: lowercase;
-      color: #c1c1c1;
+      .author_tag {
+        position: relative;
+        font-size: 110%;
+        font-weight: bold;
+        font-style: italic;
+        text-transform: lowercase;
+        color: #c1c1c1;
 
-      margin-bottom: 1em;
-    }
+        margin-bottom: 1em;
+      }
 
-    select#prompt_color {
-      width: 8em;
-      margin-bottom: 1em;
-    }
+      select#prompt_color {
+        width: 8em;
+        margin-bottom: 1em;
+      }
 
     }
   }
