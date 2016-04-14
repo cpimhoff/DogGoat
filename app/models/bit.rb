@@ -9,6 +9,8 @@ class Bit < ActiveRecord::Base
 
   scope :by_recent, -> {order('created_at DESC')}
 
+  paginates_per 8
+
   def content
     return self.raw_content
   end

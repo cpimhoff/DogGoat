@@ -6,7 +6,7 @@ class BitsController < ApplicationController
   before_action :enforce_bit_ownership, :only => ['edit', 'update', 'delete', 'destroy']
 
   def index
-    @bits = Bit.by_recent
+    @bits = Bit.by_recent.page params[:page]
   end
 
   def new
