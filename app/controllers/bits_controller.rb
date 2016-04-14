@@ -3,6 +3,7 @@ class BitsController < ApplicationController
   before_action :get_bit_from_id, only: ['edit', 'update', 'delete', 'destroy']
 
   def index
+    @bits = Bit.by_recent
   end
 
   def new
@@ -22,5 +23,11 @@ class BitsController < ApplicationController
 
   def destroy
   end
+
+  private
+
+    def get_bit_from_id
+      @bit = Bit.find(params[:id])
+    end
 
 end
