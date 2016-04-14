@@ -81,10 +81,10 @@
     .bit-text {
       z-index: 1;
       font-size: 110%;
+      color: #424141;
       @media (max-width: 470px) { //scale down on smaller devices
         font-size: 100%;
       }
-      color: #424141;
     }
 
     .author {
@@ -132,6 +132,14 @@
       float: right;
     }
 
+  }
+}
+
+.bit-index-preview {
+  max-width: 30em;
+
+  .author {
+    margin-top: 0.5em;
   }
 }
 
