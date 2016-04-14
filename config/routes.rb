@@ -28,7 +28,7 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :bits, except: [:index] do
+  resources :bits, except: [:show] do
     member do
       get 'delete' #delete form not default
     end
