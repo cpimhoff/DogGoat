@@ -15,6 +15,7 @@
 @import "component/inputs.scss";
 @import "component/post-headings.scss";
 @import "component/shapes.scss";
+@import "component/forms.scss";
 
 //layout
 @import "layout/header.scss";
@@ -25,14 +26,12 @@
 
 //controllers
 @import "controllers/posts.scss";
-@import "controllers/post_forms.scss";
 @import "controllers/prompts.scss";
-@import "controllers/prompt_forms.scss";
 @import "controllers/login.scss";
 @import "controllers/members.scss";
 @import "controllers/invites.scss";
 @import "controllers/static.scss";
-
+@import "controllers/bits.scss";
 
 //mailers
 @import "mailers/layout.scss";

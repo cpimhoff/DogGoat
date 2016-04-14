@@ -1,0 +1,4 @@
+<% unless session['member_id'].blank? %>
+  <%= link_to "New Bit", new_bit_path, class: "button"%>
+<% end %>
+<%= render 'bits_list' %>

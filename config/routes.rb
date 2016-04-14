@@ -28,6 +28,12 @@ Rails.application.routes.draw do
     end
   end
 
+  resources :bits, except: [:show] do
+    member do
+      get 'delete' #delete form not default
+    end
+  end
+
   resources :members, except: [:index, :destroy], path_names: { new: "claim", edit: "settings"}
 
   resources :invites, except: [:show]

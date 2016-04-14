@@ -1,0 +1,21 @@
+<div class="bits-list content-listing on-load-sequence-fade-in-container">
+  <% @bits.each do |b| %>
+    <div class="bit-index-preview animation-child">
+      <span class="bit_details" style="border-left-color: <%=b.color%>">
+        <span class="bit-text">
+          <%= b.content %>
+        </span>
+        <span class="author">
+          <%= link_to b.author.full_name, member_path(b.author) %>
+        </span>
+        <% if b.author_id == session[:member_id] %>
+        <span class="button">
+          <%= link_to "edit", edit_bit_path(b) %>
+        </span>
+        <% end %>
+      </span>
+    </div>
+  <%end%>
+
+  <%= paginate @bits, :window => 2 %>
+</div>
