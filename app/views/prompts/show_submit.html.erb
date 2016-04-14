@@ -18,7 +18,7 @@
   <div class="riff-state-label">
     Submit
   </div>
-  <div class="riff-form">
+  <div class="riff-form on-load-fade-drop-from-above">
     <%= semantic_form_for :riff, method: :put, url: add_riff_prompt_path(@prompt) do |f| %>
       <%= f.input :content, :as => :text, :input_html => {:placeholder => "make a riff"} %>
       <%= f.action :submit, :as => :button, label: "Submit", :button_html => {:class => "new-riff button smaller-button", :value => "post-riff"} %>
