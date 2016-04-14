@@ -67,7 +67,7 @@ class BitsController < ApplicationController
       end
     end
 
-    def enforce_prompt_ownership
+    def enforce_bit_ownership
       if session[:member_id] == @bit.author_id
         return
       else

@@ -2,17 +2,18 @@
   <%= semantic_form_for @bit do |f| %>
     <div class="bit-heading" style="border-left-color: <%= @bit.color %>">
       <%= f.input :color, :as => :select, :collection => colors_option_hash %>
-      <%= f.input :raw_content, placeholder: "write your golden-age-of-comedy bit here..." %>
       <div class="author-no-link">
         <%= @bit.author.full_name %>
       </div>
     </div>
 
+    <%= f.input :raw_content, placeholder: "write your golden-age-of-comedy bit here..." %>
+
     <!-- Primary Submit -->
     <%= f.action :submit, :as => :button, label: "Publish", :button_html => {:class => "button", :value => "post"} %>
 
     <% unless is_new %>
-      <%= link_to "Delete", delete_bit_path(@prompt), class: "destructive-button smaller-button" %>
+      <%= link_to "Delete", delete_bit_path(@bit), class: "destructive-button smaller-button" %>
     <% end %>
   <% end %>
 </div>

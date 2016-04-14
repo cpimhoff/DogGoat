@@ -8,6 +8,11 @@
         <span class="author">
           <%= link_to b.author.full_name, member_path(b.author) %>
         </span>
+        <% if b.author_id == session[:member_id] %>
+        <span class="button">
+          <%= link_to "edit", edit_bit_path(b) %>
+        </span>
+        <% end %>
       </span>
     </div>
   <%end%>
