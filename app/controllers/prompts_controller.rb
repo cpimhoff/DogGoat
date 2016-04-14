@@ -34,6 +34,13 @@ class PromptsController < ApplicationController
     else
       # display current frontrunners
       @winners = @prompt.riffs.limit(3).by_vote
+      @winners.each do |w|
+        # Update each winner's is_winner property
+        unless w.is_winner
+          w.is_winner = true
+          w.save
+        end
+      end
       render 'show_results'
     end
   end
