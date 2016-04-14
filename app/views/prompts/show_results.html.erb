@@ -18,12 +18,12 @@
     <% rank = 1 %>
     <% @winners.each do |r| %>
       <div class="riff-show animation-child">
-        <span class="rank-number"><%= rank %></span>
+        <span class="rank-number" data-rank="<%=rank%>"><%= rank %></span>
         <span class="riff-content">
           <%= r.content %>
         </span>
         <div class="riff-author">
-          <%= r.author.full_name %>
+          <%= link_to r.author.full_name, member_path(r.author) %>
         </div>
       </div>
       <% rank+=1 %>
