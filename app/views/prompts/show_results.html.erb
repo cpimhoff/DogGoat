@@ -11,13 +11,8 @@
     </div>
   </div>
 
-  <% if @prompt.author_id == session[:member_id] %>
-    <%= link_to "edit", edit_prompt_path(@prompt), class: "button" %>
-  <% end %>
-
-
   <div class="riff-list on-load-sequence-fade-in-container">
-    <% @prompt.riffs.each do |r| %>
+    <% @winners.each do |r| %>
       <div class="riff-show animation-child">
         <div class="riff-content">
           <%= r.content %>
@@ -28,14 +23,5 @@
       </div>
     <% end %>
   </div>
-
-  <% if @prompt.is_open %>
-    <div class="riff-form">
-      <%= semantic_form_for :riff, remote: true, method: :put, url: add_riff_prompt_path(@prompt) do |f| %>
-        <%= f.input :content, :as => :text, :input_html => {:placeholder => "make a riff"} %>
-        <%= f.action :submit, :as => :button, label: "Submit", :button_html => {:class => "button smaller-button new-riff", :value => "post-riff"} %>
-      <% end %>
-    </div>
-  <% end %>
 
 </div>

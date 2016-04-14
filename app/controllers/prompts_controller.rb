@@ -14,25 +14,42 @@ class PromptsController < ApplicationController
   # a) the prompt - adding and voting on riffs (for members)
   # b) the prompt, and the top responses
   def show
-
+    if @prompt.is_open && !session[:member_id].blank?
+      if @prompt.has_member_contributed(session[:member_id])
+        # member is eligable to vote
+        @ballot = @prompt.voting_selection
+      else
+        @ballot = false
+      end
+      render 'show_open'
+    else
+      @winners = @prompt.riffs.limit(3).by_vote
+      render 'show_results'
+    end
   end
 
   # receivers for riffs and votes
   def add_riff
+    if @prompt.has_member_contributed(session[:member_id])
+      redirect_to prompts_path(@prompt) # limit one contribution per member
+      return
+    end
+
     riff = Riff.new(riff_params)
     riff.author_id = session[:member_id]
     riff.prompt = @prompt
     riff.save
 
-    if request.xhr?
-      render json: { new_riff_content: riff.content, new_riff_author: riff.author.full_name, prompt_id: @prompt.id }
-    else
-      redirect_to prompts_path(@prompt)
-    end
+    redirect_to prompt_path(@prompt)
   end
 
   def vote
-
+    riff = Riff.find(vote_params[:riff_id])
+    if riff.prompt_id == @prompt.id
+      riff.votes += 1
+      riff.save
+    end
+    redirect_to prompt_path(@prompt)
   end
 
   # form for new prompt
@@ -92,7 +109,7 @@ class PromptsController < ApplicationController
     end
 
     def vote_params
-      params.require('prompt').permit('title','color','text')
+      params.require('vote').permit('riff_id')
     end
 
     def enforce_membership

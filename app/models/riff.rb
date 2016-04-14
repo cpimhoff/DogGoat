@@ -9,5 +9,8 @@ class Riff < ActiveRecord::Base
 
   scope :by_recent, -> {order('created_at DESC')}
   scope :by_vote, -> {order('votes DESC')}
+  scope :randomly, -> {order("RANDOM()")}
+
+  scope :winners, -> {where(:is_winner == true)}
 
 end

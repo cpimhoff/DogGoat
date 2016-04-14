@@ -7,7 +7,7 @@ update_prompt_color_to_select = (e) ->
     color = $(this).val()
     $(".prompt-heading").css("border-left-color", color)
 
-# Updates the value of a score display after an AJAX request (from an AJAX result)
+# # Updates the value of a score display after an AJAX request (from an AJAX result)
 on_recieve_new_riff = (status,data,xhr)->
   $("#riff_content").val('')
   $(".riff-list").append("<div class='riff-show'>
@@ -18,6 +18,7 @@ on_recieve_new_riff = (status,data,xhr)->
       #{data.new_riff_author}
     </div>
   </div>")
+  $(".riff-form").slideUp();
 
 # Hookups
 ready = ->
@@ -27,4 +28,5 @@ ready = ->
 $(document).ready(ready)
 $(document).on('page:load',ready)
 
-$(document).on 'ajax:success', on_recieve_new_riff
+$(document).on 'ajax:success','form.riff', on_recieve_new_riff
+# $(document).on 'ajax:success','a.vote-for', on_vote_recieved
