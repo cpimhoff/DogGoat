@@ -19,12 +19,18 @@
     Vote
   </div>
   <div class="vote-riff-list on-load-sequence-fade-in-container">
-    <% @ballot.each do |r| %>
-      <div class="riff-show animation-child">
-        <div class="riff-content">
-          <%= link_to r.content, vote_prompt_path(@prompt, vote: {:riff_id => r.id}), method: :put, class: "vote-for" %>
+    <% if @ballot.count <= 0 %>
+      <p>
+        Sorry, there's no riffs that you can vote on right now.
+      </p>
+    <% else %>
+      <% @ballot.each do |r| %>
+        <div class="riff-show animation-child">
+          <div class="riff-content">
+            <%= link_to r.content, vote_prompt_path(@prompt, vote: {:riff_id => r.id}), method: :put, class: "vote-for" %>
+          </div>
         </div>
-      </div>
+      <% end %>
     <% end %>
   </div>
 

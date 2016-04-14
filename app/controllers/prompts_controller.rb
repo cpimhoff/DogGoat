@@ -7,6 +7,9 @@ class PromptsController < ApplicationController
 
   def index
     selected_sort = Prompt.by_recent  # default ordering
+    if session[:member_id].blank?
+      selected_sort = selected_sort.only_closed
+    end
     @prompts = selected_sort.page params[:page]
   end
 
@@ -14,15 +17,19 @@ class PromptsController < ApplicationController
   # a) the prompt - adding and voting on riffs (for members)
   # b) the prompt, and the top responses
   def show
-    if @prompt.is_open && !session[:member_id].blank?
-      # if the prompt is open and a member is logged in...
-      if @prompt.has_member_contributed(session[:member_id])
-        # member is eligable to vote
-        @ballot = @prompt.voting_selection
-        render 'show_vote'
+    if @prompt.is_open
+      if session[:member_id].present?
+        # if the prompt is open and a member is logged in...
+        if @prompt.has_member_contributed(session[:member_id])
+          # member is eligable to vote
+          @ballot = @prompt.voting_selection(session[:member_id])
+          render 'show_vote'
+        else
+          # member should contribute
+          render 'show_submit'
+        end
       else
-        # member should contribute
-        render 'show_submit'
+        redirect_to prompts_path
       end
     else
       # display current frontrunners

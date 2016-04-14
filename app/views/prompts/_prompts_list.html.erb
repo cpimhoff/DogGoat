@@ -1,4 +1,4 @@
-<div class="prompts-list on-load-sequence-fade-in-container">
+<div class="prompts-list content-listing on-load-sequence-fade-in-container">
   <% @prompts.each do |p| %>
     <div class="prompt-index-preview animation-child">
       <span class="prompt_details" style="border-left-color: <%=p.color%>">
@@ -7,6 +7,9 @@
         </span>
         <span class="author">
           <%= link_to "from #{p.author.full_name}", member_path(p.author) %>
+        </span>
+        <span class="prompt-status" data-status="<%=p.is_open ? 'open' : 'closed' %>">
+          <%= p.is_open ? "open" : "completed" %>
         </span>
       </span>
     </div>

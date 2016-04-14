@@ -13,10 +13,11 @@ class Prompt < ActiveRecord::Base
   paginates_per 6
 
   scope :by_recent, -> {order('created_at DESC')}
+  scope :only_closed, -> {where('created_at <= ?', 1.day.ago.utc)}
 
   # returns a list of a few riffs, which should be voted on
-  def voting_selection
-    return self.riffs.limit(3).randomly
+  def voting_selection(member_id = -1)
+    return self.riffs.where.not(author_id: member_id).limit(3).randomly
   end
 
   def is_open
@@ -32,7 +33,9 @@ class Prompt < ActiveRecord::Base
   end
 
   def has_member_contributed(member_id)
-    contrib = self.riffs.where(:author_id == :member_id)
+    contrib = self.riffs.where(author_id: member_id)
+    Rails.logger.debug "has contributed #{contrib.count} times"
+
     if contrib.count > 0
       return true
     else

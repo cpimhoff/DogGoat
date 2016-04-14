@@ -89,6 +89,18 @@
       }
     }
 
+    .prompt-status {
+      font-weight: bold;
+      font-style: italic;
+      float: right;
+    }
+    .prompt-status[data-status='open'] {
+
+    }
+    .prompt-status[data-status='closed'] {
+      opacity: 0.2;
+    }
+
     .score {
       z-index: -1;
       color: black;
