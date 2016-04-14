@@ -10,27 +10,51 @@ class BitsController < ApplicationController
   end
 
   def new
+    @bit = Bit.new
+    @bit.author = Member.find(session[:member_id])
   end
 
   def create
+    @bit = Bit.new(bit_params)
+    @bit.author = Member.find(session[:member_id])
+    if @bit.save
+      flash['msg'] = "Your bit was posted."
+      redirect_to bits_path
+    else
+      render 'new'
+    end
   end
 
   def edit
   end
 
   def update
+    @bit.update(bit_params)
+    if @bit.save
+      flash['msg'] = "Your bit was updated."
+      redirect_to bits_path
+    else
+      render 'edit'
+    end
   end
 
   def delete
   end
 
   def destroy
+    flash['msg'] = "That bit has been killed! We hated it anyway."
+    @bit.destroy
+    redirect_to bits_path
   end
 
   private
 
     def get_bit_from_id
       @bit = Bit.find(params[:id])
+    end
+
+    def bit_params
+      params.require('bit').permit('color', 'raw_content')
     end
 
     def enforce_membership

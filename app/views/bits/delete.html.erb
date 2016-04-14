@@ -1,2 +1,14 @@
-<h1>Bits#delete</h1>
-<p>Find me in app/views/bits/delete.html.erb</p>
+<div class="delete-post">
+  <div class="warning-block">
+    Are you sure you would like to delete this bit? This action can not be undone.
+  </div>
+
+  <div class="buttons">
+    <%= semantic_form_for @bit, method: :delete do |f| %>
+      <div class="options">
+        <%= link_to "Cancel", bits_path, class: "button"%>
+        <%= f.action :submit, :label => "delete", :as => :button, :button_html => {:class => "destructive-button"} %>
+      </div>
+    <% end %>
+  </div>
+</div>

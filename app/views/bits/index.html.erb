@@ -1,2 +1,4 @@
-<h1>Bits#index</h1>
-<p>Find me in app/views/bits/index.html.erb</p>
+<% unless session['member_id'].blank? %>
+  <%= link_to "New Bit", new_bit_path, class: "button"%>
+<% end %>
+<%= render 'bits_list' %>
