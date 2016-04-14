@@ -1,6 +1,6 @@
 class Bit < ActiveRecord::Base
 
-  belongs_to :author, class: "Member", foreign_key: "author_id"
+  belongs_to :author, class_name: "Member", foreign_key: "author_id"
 
   validates_presence_of :author_id, message: "Bits must have an authoring member."
   validates_presence_of :raw_content, message: "Bits need content."
