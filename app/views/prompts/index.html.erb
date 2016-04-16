@@ -1,3 +1,7 @@
+<div class="tiny-hint">
+  <%= link_to "about riffs...", controller: 'static', action: 'about_riffs' %>
+</div>
+
 <% unless session['member_id'].blank? %>
   <%= link_to "New Prompt", new_prompt_path, class: "button"%>
 <% end %>

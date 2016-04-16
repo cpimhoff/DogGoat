@@ -18,4 +18,7 @@ class StaticController < ApplicationController
   def changelog
   end
 
+  def about_riffs
+  end
+
 end

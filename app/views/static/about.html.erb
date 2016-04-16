@@ -36,41 +36,33 @@
 
   <%= image_tag "doggoat-2-black.png", class: "medium_sqr" %>
 
-  <h2>How DogGoat's Details Work</h2>
-  <h3>Markdown</h3>
+  <h2>DogGoat's Zones</h2>
+  <h3>Posts</h3>
   <p>
-    All posts on DogGoat are formatted in Markdown. Markdown is a plain text format which allows us to give authors the flexibility to format their content, while also keeping the site as a whole looking consistent.
-  </p>
-  <p>
-    Markdown looks just like regular plain text, but with a few well placed <em>_underlines_</em> or <b>**asterisks**</b>, you get inline styles. By using '#' symbols at the start of a line, you get different sized headings. We took care when designing how our Markdown looks to give authors the flexibility to write anything from advice columns to grocery lists to screenplays within a single, simple style.
-  </p>
-  <p>
-    If you don't want to format your stuff, no problem, plain text is compatible with Markdown, so there's no buy-in to learn it if you don't want to use it.
-  </p>
-  <p>
-    For more information on Markdown, take a look at the <%= link_to "DogGoat Guide to Markdown", controller: "static", action: "markdown" %>.
+    Posts are the bread and butter of comedic work shared to DogGoat. Posts are any kind of article, story, or long-form bit that authors want to share with the world. Posts are formatted in <%= link_to "Markdown", controller: "static", action: "markdown" %>, for greater control.
   </p>
 
-  <h3>Invites</h3>
+  <h3>Bits</h3>
   <p>
-    Over time, and based on consistently changing conditions, Members receive invites to send off to new comedians. These invites never expire, but Members are encouraged to make them count.
-  </p>
-  <p>
-    Inviting somebody is simple. Just create a new invite with any email you know they can get to. Then, click send. Invitees are sent a claim code they can use to create their account. And they'll know you invited them, so they'll thank you (with cookies?).
+    Bits are simple, short, snappy moments of comedic insight. DogGoat's bits are a <em>bit</em> longer than tweets. They bubble up and down the "bit list" based on popularity.
   </p>
 
-  <h3>The Code</h3>
+  <h3>Riffs</h3>
   <p>
-    If you <em>really</em> want to know how DogGoat works, like to a degree which makes you kind of a loser (it's okay, the people who made the site certainly are), you can actually look at all the source code.
+    Riffs take inspiration from improv comedy's backline games. Riffs all start with a prompt, then, the community has a set amount of time to submit their best responses, or <em>riffs</em>, on the prompt.
   </p>
-
   <p>
-    Check us out (or better yet, fork us): <%= link_to "DogGoat on Github", "http://www.github.com/cpimhoff/doggoat" %>
+    After a member submits their best riff, they can then vote on which other submissions they think are funniest. After a set amount of time, the riff closes, and the top three responses are displayed for all to see (and marvel at).
   </p>
 
   <h2>Development</h2>
   <p>
     DogGoat is currently in <em>Alpha</em>. That's a niche term, and <%= link_to "here's what it means for DogGoat", controller: "static", action: "prerelease" %>.
+  </p>
+
+  <h3>The Code</h3>
+  <p>
+    If you want to know how DogGoat works under the hood, you can actually look at all the source code. <br /> Check us out (or better yet, fork us): <%= link_to "DogGoat on Github", "http://www.github.com/cpimhoff/doggoat" %>
   </p>
 
 </div>
