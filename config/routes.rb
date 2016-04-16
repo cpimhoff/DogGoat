@@ -18,7 +18,7 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :prompts do
+  resources :prompts, path: 'riffs' do
     member do
       # recivers for AJAX events:
       put 'add_riff'
@@ -50,6 +50,7 @@ Rails.application.routes.draw do
   get 'markdown' => 'static#markdown'
   get 'prerelease' => 'static#prerelease'
   get 'changelog' => 'static#changelog'
+  get 'about_riffs' => 'static#about_riffs'
 
   # Routes for the admin zone
   mount RailsAdmin::Engine => '/admin_zone', as: 'rails_admin'
