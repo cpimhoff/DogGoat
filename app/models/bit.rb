@@ -8,11 +8,18 @@ class Bit < ActiveRecord::Base
   validates_presence_of :color, message: "Bits need to have a color value. It makes the site more approachable."
 
   scope :by_recent, -> {order('created_at DESC')}
+  scope :by_time_score, -> {order('time_score DESC')}
 
   paginates_per 8
 
   def content
     return self.raw_content
+  end
+
+  def upvote
+    new_score = self.time_score + 1.hours
+    new_score = [new_score, Time.now].min
+    self.time_score = new_score
   end
 
 end

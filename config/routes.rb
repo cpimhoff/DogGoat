@@ -20,7 +20,7 @@ Rails.application.routes.draw do
 
   resources :prompts, path: 'riffs' do
     member do
-      # recivers for AJAX events:
+      # receivers for AJAX events:
       put 'add_riff'
       put 'vote'
       # additional pages:
@@ -30,6 +30,7 @@ Rails.application.routes.draw do
 
   resources :bits, except: [:show] do
     member do
+      put 'upvote' #AJAX event
       get 'delete' #delete form not default
     end
   end

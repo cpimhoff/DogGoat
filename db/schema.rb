@@ -11,17 +11,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160414204843) do
+ActiveRecord::Schema.define(version: 20160425164119) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "bits", force: :cascade do |t|
-    t.text     "raw_content", default: "", null: false
+    t.text     "raw_content", default: "",                    null: false
     t.string   "color"
-    t.integer  "author_id",                null: false
-    t.datetime "created_at",               null: false
-    t.datetime "updated_at",               null: false
+    t.integer  "author_id",                                   null: false
+    t.datetime "created_at",                                  null: false
+    t.datetime "updated_at",                                  null: false
+    t.datetime "time_score",  default: '2016-04-25 16:47:45'
   end
 
   create_table "friendly_id_slugs", force: :cascade do |t|

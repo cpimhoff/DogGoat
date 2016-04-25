@@ -1,12 +1,22 @@
 class BitsController < ApplicationController
 
-  before_action :get_bit_from_id, only: ['edit', 'update', 'delete', 'destroy']
+  before_action :get_bit_from_id, only: ['upvote', 'edit', 'update', 'delete', 'destroy']
 
   before_action :enforce_membership, :only => ['create', 'new']
   before_action :enforce_bit_ownership, :only => ['edit', 'update', 'delete', 'destroy']
 
   def index
-    @bits = Bit.by_recent.page params[:page]
+    @bits = Bit.by_time_score.page params[:page]
+  end
+
+  def upvote
+    @bit.upvote
+    @bit.save
+    if request.xhr?
+      render json: { bit_id: @bit.id }
+    else
+      redirect_to bits_path
+    end
   end
 
   def new
@@ -17,6 +27,7 @@ class BitsController < ApplicationController
   def create
     @bit = Bit.new(bit_params)
     @bit.author = Member.find(session[:member_id])
+    @bit.time_score = Time.now
     if @bit.save
       flash['msg'] = "Your bit was posted."
       redirect_to bits_path
