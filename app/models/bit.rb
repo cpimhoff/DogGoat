@@ -18,7 +18,9 @@ class Bit < ActiveRecord::Base
 
   def upvote
     new_score = self.time_score + 1.hours
-    new_score = [new_score, Time.now].min
+    if new_score > Time.now
+      new_score = Time.now
+    end
     self.time_score = new_score
   end
 

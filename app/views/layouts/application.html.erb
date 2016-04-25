@@ -28,8 +28,6 @@
         <li class="pure-menu-item">
           <%= link_to_unless_current "posts", posts_path(:sort_by => "hot")%></li>
         <li class="pure-menu-item">
-          <%= link_to_unless_current "featured", posts_path(:sort_by => "featured")%></li>
-        <li class="pure-menu-item">
           <%= form_tag search_posts_path, :method => :get do %>
             <%= text_field_tag :query, params[:query], :placeholder => "search", class: "underlined-input-light" %>
           <% end %>
