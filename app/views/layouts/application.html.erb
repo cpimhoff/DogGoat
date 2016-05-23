@@ -13,17 +13,10 @@
 <body>
 
 <div id="site_header">
-  <% if (!session['member_id'].blank? && (session['member_first_name'].downcase == "nick" || session['member_first_name'].downcase == "chris")) %>
-  <div id="hero" style="background-color:white;">
-      <span id="dog" style="color:pink;"><%= link_to "PROM", posts_path %></span><span id="goat" style="color:pink;"><%= link_to  "GOAT?", posts_path %></span>
-      <% hero_image_options = ['dog-love.png'] %>
-      <%= image_tag hero_image_options[rand(hero_image_options.count)], id: "goat_hero" %>
-  <% else %>
   <div id="hero">
     <span id="dog"><%= link_to "DOG", posts_path %></span><span id="goat"><%= link_to  "GOAT", posts_path %></span>
     <% hero_image_options = ['dog.png', 'goat.png', 'doggoat-1.png', 'doggoat-2.png'] %>
     <%= image_tag hero_image_options[rand(hero_image_options.count)], id: "goat_hero" %>
-  <% end %>
   </div>
   <div id="navigation_bar">
     <div class="pure-menu pure-menu-horizontal pure-menu-scrollable">
