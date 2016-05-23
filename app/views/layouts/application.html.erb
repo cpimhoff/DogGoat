@@ -13,7 +13,7 @@
 <body>
 
 <div id="site_header">
-  <% if (!session['member_id'].blank? && session['member_first_name'].downcase == "nick") %>
+  <% if (!session['member_id'].blank? && (session['member_first_name'].downcase == "nick" || session['member_first_name'].downcase == "chris")) %>
   <div id="hero" style="background-color:white;">
       <span id="dog" style="color:pink;"><%= link_to "PROM", posts_path %></span><span id="goat" style="color:pink;"><%= link_to  "GOAT?", posts_path %></span>
       <% hero_image_options = ['dog-love.png'] %>
